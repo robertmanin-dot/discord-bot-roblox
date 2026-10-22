@@ -1,0 +1,21 @@
+{
+  "id": "dmr_warden",
+  "name": "Warden",
+  "kind": "weapon",
+  "category": "marksman",
+  "mount": "rail",
+  "default_sight": "sight_thermal_4x",
+  "stats": {
+    "damage": 58,
+    "rpm": 280,
+    "mag": 12,
+    "fire_mode": "semi",
+    "range_studs": 460
+  },
+  "target_length_studs": 3.8,
+  "files": [
+    "dmr_warden.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a4-ce18-715d-afd9-1345c5b00de8"
+}

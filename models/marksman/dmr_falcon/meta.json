@@ -1,0 +1,21 @@
+{
+  "id": "dmr_falcon",
+  "name": "Falcon DMR",
+  "kind": "weapon",
+  "category": "marksman",
+  "mount": "rail",
+  "default_sight": "sight_hybrid_4x",
+  "stats": {
+    "damage": 55,
+    "rpm": 300,
+    "mag": 15,
+    "fire_mode": "semi",
+    "range_studs": 450
+  },
+  "target_length_studs": 3.8,
+  "files": [
+    "dmr_falcon.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a4-2e09-7608-a9f5-de6950b2c4fb"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "sr_specter",
+  "name": "Specter",
+  "kind": "weapon",
+  "category": "sniper",
+  "mount": "rail",
+  "default_sight": "sight_sniper_8x",
+  "stats": {
+    "damage": 85,
+    "rpm": 120,
+    "mag": 10,
+    "fire_mode": "semi",
+    "range_studs": 700
+  },
+  "target_length_studs": 4.3,
+  "files": [
+    "sr_specter.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a5-4e78-706d-9585-69b834f5eef4"
+}

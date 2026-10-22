@@ -1,0 +1,21 @@
+{
+  "id": "sr_obsidian",
+  "name": "Obsidian",
+  "kind": "weapon",
+  "category": "sniper",
+  "mount": "rail",
+  "default_sight": "sight_sniper_8x",
+  "stats": {
+    "damage": 110,
+    "rpm": 45,
+    "mag": 5,
+    "fire_mode": "bolt",
+    "range_studs": 800
+  },
+  "target_length_studs": 4.3,
+  "files": [
+    "sr_obsidian.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a4-d238-72de-8bef-8be4344040b5"
+}

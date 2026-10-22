@@ -1,0 +1,21 @@
+{
+  "id": "ml_talon",
+  "name": "Talon",
+  "kind": "weapon",
+  "category": "melee",
+  "mount": "none",
+  "default_sight": null,
+  "stats": {
+    "damage": 55,
+    "rpm": 100,
+    "mag": 0,
+    "fire_mode": "melee",
+    "range_studs": 6
+  },
+  "target_length_studs": 1.3,
+  "files": [
+    "ml_talon.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a5-f5f8-7376-ad78-6ea5ba12e5df"
+}

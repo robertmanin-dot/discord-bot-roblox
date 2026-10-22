@@ -1,0 +1,21 @@
+{
+  "id": "pst_hailstorm",
+  "name": "Hailstorm",
+  "kind": "weapon",
+  "category": "pistol",
+  "mount": "slide",
+  "default_sight": "sight_mini_dot",
+  "stats": {
+    "damage": 17,
+    "rpm": 1100,
+    "mag": 25,
+    "fire_mode": "auto",
+    "range_studs": 90
+  },
+  "target_length_studs": 1.0,
+  "files": [
+    "pst_hailstorm.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a5-ec64-7074-95c6-070c418b2cbb"
+}

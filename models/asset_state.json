@@ -70,10 +70,14 @@
     "stage": "done"
   },
   "dmr_falcon": {
+    "files": [
+      "dmr_falcon.glb",
+      "preview.png"
+    ],
     "image_task": "f699a4dfc9924fc686896bd9c8723bb1",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/64b35921-5b96-4e1e-96b4-ea1cbfd14030.png",
     "model_id": "01a165a4-2e09-7608-a9f5-de6950b2c4fb",
-    "stage": "model_running"
+    "stage": "done"
   },
   "dmr_lancer": {
     "files": [
@@ -86,9 +90,14 @@
     "stage": "done"
   },
   "dmr_warden": {
+    "files": [
+      "dmr_warden.glb",
+      "preview.png"
+    ],
     "image_task": "2206a80d6d6d455dae6afc63332005ed",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6dd842b5-b167-4653-b897-2bde98ff037f.png",
-    "stage": "image_done"
+    "model_id": "01a165a4-ce18-715d-afd9-1345c5b00de8",
+    "stage": "done"
   },
   "lmg_juggernaut": {
     "files": [
@@ -121,16 +130,44 @@
     "stage": "done"
   },
   "ln_hellfire": {
-    "stage": "new"
+    "files": [
+      "ln_hellfire.glb",
+      "preview.png"
+    ],
+    "image_task": "16a18b60e6434dc1813a8e0231ace9b0",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/fed8b3ac-ba0b-4f13-8acf-94bf4ced7566.png",
+    "model_id": "01a165a5-f12b-70a7-81c2-e375c5ff2809",
+    "stage": "done"
   },
   "ml_talon": {
-    "stage": "new"
+    "files": [
+      "ml_talon.glb",
+      "preview.png"
+    ],
+    "image_task": "3cdeda9bd25a4fda8475ec04d1364ab9",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6aa8d379-a541-4471-af21-df50ce8b59e7.png",
+    "model_id": "01a165a5-f5f8-7376-ad78-6ea5ba12e5df",
+    "stage": "done"
   },
   "pst_goliath": {
-    "stage": "new"
+    "files": [
+      "pst_goliath.glb",
+      "preview.png"
+    ],
+    "image_task": "7e5dfd40be7849b6a9dad011d5635825",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/235c5dbe-dd5a-4e5e-95f0-d5b31574d838.png",
+    "model_id": "01a165a5-77a3-736e-ba95-6269b648a38f",
+    "stage": "done"
   },
   "pst_hailstorm": {
-    "stage": "new"
+    "files": [
+      "pst_hailstorm.glb",
+      "preview.png"
+    ],
+    "image_task": "e04cf298539a4d2b85ed0e53cf3f058e",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ace37adb-e694-4c40-85a6-d6d758efd952.png",
+    "model_id": "01a165a5-ec64-7074-95c6-070c418b2cbb",
+    "stage": "done"
   },
   "pst_rook": {
     "files": [
@@ -173,19 +210,25 @@
     "stage": "done"
   },
   "sight_combat_3x": {
-    "stage": "new"
+    "image_task": "3f3df167116641f390c33392fce90fde",
+    "stage": "image_running"
   },
   "sight_holo": {
-    "stage": "new"
+    "image_task": "502934557c574e92973605953322d6e6",
+    "stage": "image_running"
   },
   "sight_hybrid_4x": {
     "stage": "new"
   },
   "sight_mini_dot": {
-    "stage": "new"
+    "image_task": "58ee106b0d4843e49f97414c2c98ca98",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/719b3be6-5eff-4648-8ed2-7d7b0c222143.png",
+    "model_id": "01a165a6-7291-72e0-8caf-d807d92eb689",
+    "stage": "model_running"
   },
   "sight_prism_2x": {
-    "stage": "new"
+    "image_task": "9240107a8e8f4d71a5bc14b370fb1278",
+    "stage": "image_running"
   },
   "sight_red_dot": {
     "files": [
@@ -198,7 +241,10 @@
     "stage": "done"
   },
   "sight_reflex_open": {
-    "stage": "new"
+    "image_task": "47ee192301f349eda5c2c03589dcfe28",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/249002ac-fa29-4b0a-8fd1-16346ad33fcd.png",
+    "model_id": "01a165a6-c113-7650-b009-4b00b45a8872",
+    "stage": "model_running"
   },
   "sight_sniper_12x": {
     "stage": "new"
@@ -270,15 +316,33 @@
     "stage": "done"
   },
   "sr_harbinger": {
+    "files": [
+      "sr_harbinger.glb",
+      "preview.png"
+    ],
     "image_task": "e85093a41d7c4d6e805414172c124531",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/70ede792-bdfa-462b-b59e-c7a6777bc027.png",
+    "model_id": "01a165a5-20c6-77ad-9629-ab49a1353f6d",
+    "stage": "done"
   },
   "sr_obsidian": {
+    "files": [
+      "sr_obsidian.glb",
+      "preview.png"
+    ],
     "image_task": "f3588bc53b534fbca386f9b678bf2002",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/2445dddb-7bfd-4cb1-a3a4-8667a85857f8.png",
-    "stage": "image_done"
+    "model_id": "01a165a4-d238-72de-8bef-8be4344040b5",
+    "stage": "done"
   },
   "sr_specter": {
-    "stage": "new"
+    "files": [
+      "sr_specter.glb",
+      "preview.png"
+    ],
+    "image_task": "920af1e368ad4c3a959b695f20b0152a",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6955c39b-4442-49d5-88a8-fbbdf207a45d.png",
+    "model_id": "01a165a5-4e78-706d-9585-69b834f5eef4",
+    "stage": "done"
   }
 }

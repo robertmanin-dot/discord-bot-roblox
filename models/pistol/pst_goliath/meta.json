@@ -1,0 +1,21 @@
+{
+  "id": "pst_goliath",
+  "name": "Goliath .50",
+  "kind": "weapon",
+  "category": "pistol",
+  "mount": "slide",
+  "default_sight": null,
+  "stats": {
+    "damage": 60,
+    "rpm": 150,
+    "mag": 7,
+    "fire_mode": "semi",
+    "range_studs": 140
+  },
+  "target_length_studs": 1.0,
+  "files": [
+    "pst_goliath.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a5-77a3-736e-ba95-6269b648a38f"
+}

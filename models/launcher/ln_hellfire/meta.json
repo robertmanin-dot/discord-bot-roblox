@@ -1,0 +1,21 @@
+{
+  "id": "ln_hellfire",
+  "name": "Hellfire RL",
+  "kind": "weapon",
+  "category": "launcher",
+  "mount": "rail",
+  "default_sight": "sight_prism_2x",
+  "stats": {
+    "damage": 150,
+    "rpm": 30,
+    "mag": 1,
+    "fire_mode": "single",
+    "range_studs": 500
+  },
+  "target_length_studs": 3.8,
+  "files": [
+    "ln_hellfire.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a5-f12b-70a7-81c2-e375c5ff2809"
+}

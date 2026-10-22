@@ -1,0 +1,21 @@
+{
+  "id": "sr_harbinger",
+  "name": "Harbinger .50",
+  "kind": "weapon",
+  "category": "sniper",
+  "mount": "rail",
+  "default_sight": "sight_sniper_12x",
+  "stats": {
+    "damage": 150,
+    "rpm": 40,
+    "mag": 5,
+    "fire_mode": "bolt",
+    "range_studs": 900
+  },
+  "target_length_studs": 4.3,
+  "files": [
+    "sr_harbinger.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a5-20c6-77ad-9629-ab49a1353f6d"
+}
