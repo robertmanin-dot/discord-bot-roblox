@@ -1,0 +1,21 @@
+{
+  "id": "smg_wasp",
+  "name": "Wasp",
+  "kind": "weapon",
+  "category": "smg",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 21,
+    "rpm": 950,
+    "mag": 32,
+    "fire_mode": "auto",
+    "range_studs": 160
+  },
+  "target_length_studs": 2.2,
+  "files": [
+    "smg_wasp.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a1-3c80-7010-8044-a4eca55201e2"
+}

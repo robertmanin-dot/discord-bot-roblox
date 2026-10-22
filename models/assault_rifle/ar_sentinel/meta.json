@@ -1,0 +1,21 @@
+{
+  "id": "ar_sentinel",
+  "name": "Sentinel",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_prism_2x",
+  "stats": {
+    "damage": 33,
+    "rpm": 900,
+    "mag": 30,
+    "fire_mode": "burst",
+    "range_studs": 340
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_sentinel.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a1-6685-7270-857b-706d21fa8553"
+}

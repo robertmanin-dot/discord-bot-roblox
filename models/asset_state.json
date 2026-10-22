@@ -40,10 +40,14 @@
     "stage": "done"
   },
   "ar_sentinel": {
+    "files": [
+      "ar_sentinel.glb",
+      "preview.png"
+    ],
     "image_task": "abb28b738fd0403e8c81619223e6fecb",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/258907ff-b53d-48c3-bc1e-a642982a182c.png",
     "model_id": "01a165a1-6685-7270-857b-706d21fa8553",
-    "stage": "model_running"
+    "stage": "done"
   },
   "ar_tundra": {
     "files": [
@@ -152,30 +156,44 @@
     "stage": "new"
   },
   "smg_ferret": {
-    "stage": "new"
+    "image_task": "3cec809d7a76490c9d2748c602b3a714",
+    "stage": "image_running"
   },
   "smg_hornet": {
+    "files": [
+      "smg_hornet.glb",
+      "preview.png"
+    ],
     "image_task": "45066b288f2748798f225a8b2f407606",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/067bd58c-8b17-4f3d-a2e8-0f6422f65aae.png",
-    "stage": "image_done"
+    "model_id": "01a165a1-925c-773d-98c8-00acb04ea0de",
+    "stage": "done"
   },
   "smg_jackal": {
     "image_task": "220322b1647d4ae6ad1c6bf0aef9533e",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/3853f9e9-c80e-4613-b2d0-f068160745f8.png",
-    "stage": "image_done"
+    "model_id": "01a165a1-8dea-73f0-9e7a-8020d3889d3c",
+    "stage": "model_running"
   },
   "smg_rattler": {
-    "stage": "new"
+    "image_task": "eb66b1d81272442fa9d61666646a7624",
+    "stage": "image_running"
   },
   "smg_viper": {
     "image_task": "566723766438479488e7b3b25d4a1744",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/28295eef-2867-4be6-bc34-b9e3b03e8743.png",
+    "model_id": "01a165a1-bd6c-7407-9e16-e7df8170485f",
+    "stage": "model_running"
   },
   "smg_wasp": {
+    "files": [
+      "smg_wasp.glb",
+      "preview.png"
+    ],
     "image_task": "ce1fc264fbbb4345ae3375330e26c684",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/5d54c147-2a3e-44c4-9692-ce9c6b5122ba.png",
     "model_id": "01a165a1-3c80-7010-8044-a4eca55201e2",
-    "stage": "model_running"
+    "stage": "done"
   },
   "sr_harbinger": {
     "stage": "new"
