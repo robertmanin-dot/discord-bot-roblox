@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "meshy": {
+    "art_style": "realistic",
+    "topology": "triangle",
+    "default_polycount": 4000,
+    "texture": true,
+    "prompt_template": "Low poly stylized {description}. Game-ready first-person shooter weapon for Roblox, clean simple geometry with flat-shaded faces, neutral color scheme of dark gunmetal grey and black polymer with subtle olive accents, no logos, no text, no hands, single isolated object, pointing forward.",
+    "texture_prompt": "Neutral military finish, dark gunmetal grey metal, matte black polymer, small olive green accents, clean low poly hand-painted look, no logos, no text."
+  },
+  "categories": {
+    "assault_rifle": { "label": "Sturmgewehr", "length_studs": 3.2 },
+    "smg": { "label": "Maschinenpistole", "length_studs": 2.2 },
+    "shotgun": { "label": "Schrotflinte", "length_studs": 3.3 },
+    "lmg": { "label": "LMG", "length_studs": 3.6 },
+    "marksman": { "label": "Marksman-Gewehr", "length_studs": 3.8 },
+    "sniper": { "label": "Scharfschützengewehr", "length_studs": 4.3 },
+    "pistol": { "label": "Pistole", "length_studs": 1.0 },
+    "launcher": { "label": "Werfer", "length_studs": 3.8 },
+    "melee": { "label": "Nahkampf", "length_studs": 1.3 }
+  },
+  "weapons": [
+    {
+      "id": "ar_vanguard", "name": "Vanguard", "category": "assault_rifle", "sight": "red_dot",
+      "description": "modern tactical carbine assault rifle with collapsible stock, straight box magazine, top picatinny rail with a compact red dot sight, short handguard",
+      "stats": { "damage": 28, "rpm": 750, "mag": 30, "fire_mode": "auto", "range_studs": 300 }
+    },
+    {
+      "id": "ar_kestrel", "name": "Kestrel-7", "category": "assault_rifle", "sight": "holographic",
+      "description": "compact bullpup assault rifle with the magazine behind the pistol grip, angular polymer body, integrated carry rail with a holographic sight",
+      "stats": { "damage": 26, "rpm": 820, "mag": 30, "fire_mode": "auto", "range_studs": 280 }
+    },
+    {
+      "id": "ar_bastion", "name": "Bastion 762", "category": "assault_rifle", "sight": "scope_3x",
+      "description": "heavy battle rifle with long barrel, chunky straight magazine, fixed skeleton stock and a small 3x prism scope on top",
+      "stats": { "damage": 38, "rpm": 560, "mag": 20, "fire_mode": "auto", "range_studs": 360 }
+    },
+    {
+      "id": "ar_ravager", "name": "Ravager", "category": "assault_rifle", "sight": "iron",
+      "description": "rugged assault rifle with curved banana magazine, side folding stock, gas tube above the barrel and simple front post iron sights",
+      "stats": { "damage": 32, "rpm": 620, "mag": 30, "fire_mode": "auto", "range_studs": 280 }
+    },
+    {
+      "id": "ar_halcyon", "name": "Halcyon", "category": "assault_rifle", "sight": "red_dot",
+      "description": "sleek modern assault rifle with smooth enclosed handguard, angled magazine well, adjustable stock and a low profile red dot sight",
+      "stats": { "damage": 27, "rpm": 780, "mag": 32, "fire_mode": "auto", "range_studs": 300 }
+    },
+    {
+      "id": "ar_tundra", "name": "Tundra-9", "category": "assault_rifle", "sight": "holographic",
+      "description": "short barrel rifle with very compact handguard, vertical foregrip, folding stock and a boxy holographic sight",
+      "stats": { "damage": 25, "rpm": 860, "mag": 30, "fire_mode": "auto", "range_studs": 240 }
+    },
+    {
+      "id": "ar_ironclad", "name": "Ironclad", "category": "assault_rifle", "sight": "iron",
+      "description": "burst fire assault rifle with a classic carry handle that doubles as rear sight, triangular front sight post, slim handguard and fixed stock",
+      "stats": { "damage": 33, "rpm": 900, "mag": 30, "fire_mode": "burst", "range_studs": 320 }
+    },
+    {
+      "id": "ar_sentinel", "name": "Sentinel", "category": "assault_rifle", "sight": "scope_2x",
+      "description": "precision assault rifle with free floating ribbed handguard, flared muzzle brake, skeleton stock and a short 2x prism scope",
+      "stats": { "damage": 30, "rpm": 680, "mag": 30, "fire_mode": "auto", "range_studs": 340 }
+    },
+
+    {
+      "id": "smg_wasp", "name": "Wasp", "category": "smg", "sight": "red_dot",
+      "description": "compact boxy submachine gun with folded wire stock, short straight magazine in the pistol grip area and a small red dot sight",
+      "stats": { "damage": 21, "rpm": 950, "mag": 32, "fire_mode": "auto", "range_studs": 160 }
+    },
+    {
+      "id": "smg_jackal", "name": "Jackal", "category": "smg", "sight": "iron",
+      "description": "classic submachine gun with slightly curved magazine, vertical foregrip, retractable stock and round drum style rear iron sight",
+      "stats": { "damage": 23, "rpm": 850, "mag": 30, "fire_mode": "auto", "range_studs": 170 }
+    },
+    {
+      "id": "smg_hornet", "name": "Hornet PDW", "category": "smg", "sight": "red_dot",
+      "description": "futuristic personal defense weapon with translucent-looking top mounted horizontal magazine, smooth rounded body, thumbhole stock and integrated reflex sight",
+      "stats": { "damage": 19, "rpm": 1000, "mag": 50, "fire_mode": "auto", "range_studs": 150 }
+    },
+    {
+      "id": "smg_viper", "name": "Viper-45", "category": "smg", "sight": "holographic",
+      "description": "chunky heavy caliber submachine gun with thick angular receiver, short barrel with suppressor-like shroud, straight magazine and holographic sight",
+      "stats": { "damage": 27, "rpm": 700, "mag": 25, "fire_mode": "auto", "range_studs": 170 }
+    },
+    {
+      "id": "smg_ferret", "name": "Ferret", "category": "smg", "sight": "iron",
+      "description": "tiny machine pistol with folding metal stock, magazine inside the pistol grip, very short barrel and simple notch iron sights",
+      "stats": { "damage": 18, "rpm": 1100, "mag": 30, "fire_mode": "auto", "range_studs": 120 }
+    },
+    {
+      "id": "smg_mantis", "name": "Mantis", "category": "smg", "sight": "red_dot",
+      "description": "submachine gun with long cylindrical helical magazine on top of the barrel, angular stock, slim body and small red dot sight at the rear",
+      "stats": { "damage": 20, "rpm": 900, "mag": 64, "fire_mode": "auto", "range_studs": 150 }
+    },
+    {
+      "id": "smg_rattler", "name": "Rattler", "category": "smg", "sight": "iron",
+      "description": "old school submachine gun with round drum magazine, finned barrel cooling ribs, vertical front grip and simple blade iron sights",
+      "stats": { "damage": 24, "rpm": 780, "mag": 50, "fire_mode": "auto", "range_studs": 160 }
+    },
+
+    {
+      "id": "sg_breacher", "name": "Breacher", "category": "shotgun", "sight": "iron",
+      "description": "pump action shotgun with ribbed pump slide under the barrel, tube magazine, full stock and a small front bead sight",
+      "stats": { "damage": 14, "pellets": 8, "rpm": 70, "mag": 6, "fire_mode": "pump", "range_studs": 60 }
+    },
+    {
+      "id": "sg_maul", "name": "Maul-12", "category": "shotgun", "sight": "red_dot",
+      "description": "semi-automatic tactical shotgun with detachable box magazine, rifle style body, short heat shield on the barrel and a red dot sight",
+      "stats": { "damage": 11, "pellets": 8, "rpm": 220, "mag": 8, "fire_mode": "semi", "range_studs": 55 }
+    },
+    {
+      "id": "sg_twinfang", "name": "Twinfang", "category": "shotgun", "sight": "iron",
+      "description": "side by side double barrel break action shotgun with short sawn-off barrels, curved grip and simple bead sight",
+      "stats": { "damage": 18, "pellets": 10, "rpm": 300, "mag": 2, "fire_mode": "semi", "range_studs": 40 }
+    },
+    {
+      "id": "sg_rhino", "name": "Rhino Drum", "category": "shotgun", "sight": "holographic",
+      "description": "fully automatic combat shotgun with large round drum magazine, bulky boxy receiver, short barrel and holographic sight",
+      "stats": { "damage": 9, "pellets": 8, "rpm": 360, "mag": 20, "fire_mode": "auto", "range_studs": 45 }
+    },
+
+    {
+      "id": "lmg_juggernaut", "name": "Juggernaut", "category": "lmg", "sight": "red_dot", "polycount": 5000,
+      "description": "belt fed light machine gun with square ammo box hanging under the receiver, folding bipod under the barrel, carry handle and a red dot sight",
+      "stats": { "damage": 30, "rpm": 700, "mag": 100, "fire_mode": "auto", "range_studs": 320 }
+    },
+    {
+      "id": "lmg_anvil", "name": "Anvil", "category": "lmg", "sight": "iron", "polycount": 5000,
+      "description": "heavy light machine gun with large round drum magazine, thick barrel with vented shroud, top carry handle and raised iron sights",
+      "stats": { "damage": 34, "rpm": 600, "mag": 75, "fire_mode": "auto", "range_studs": 320 }
+    },
+    {
+      "id": "lmg_rampart", "name": "Rampart", "category": "lmg", "sight": "scope_3x", "polycount": 5000,
+      "description": "magazine fed squad automatic rifle with long heavy barrel, extended curved magazine, folded bipod and a 3x scope",
+      "stats": { "damage": 32, "rpm": 640, "mag": 60, "fire_mode": "auto", "range_studs": 360 }
+    },
+    {
+      "id": "lmg_tempest", "name": "Tempest", "category": "lmg", "sight": "holographic", "polycount": 5000,
+      "description": "bulky light machine gun with ribbed perforated barrel shroud, top feed cover, side ammo pouch, pistol grip, vertical grip and a holographic sight",
+      "stats": { "damage": 28, "rpm": 780, "mag": 120, "fire_mode": "auto", "range_studs": 300 }
+    },
+
+    {
+      "id": "dmr_falcon", "name": "Falcon DMR", "category": "marksman", "sight": "scope_4x",
+      "description": "semi-automatic designated marksman rifle with long slim handguard, short straight magazine, adjustable cheek rest stock and a 4x scope",
+      "stats": { "damage": 55, "rpm": 300, "mag": 15, "fire_mode": "semi", "range_studs": 450 }
+    },
+    {
+      "id": "dmr_lancer", "name": "Lancer", "category": "marksman", "sight": "scope_3x",
+      "description": "lever action rifle with metal lever loop under the grip, tube magazine under the barrel, classic straight stock and a small 3x scope",
+      "stats": { "damage": 70, "rpm": 120, "mag": 8, "fire_mode": "lever", "range_studs": 420 }
+    },
+    {
+      "id": "dmr_warden", "name": "Warden", "category": "marksman", "sight": "scope_4x",
+      "description": "bullpup marksman rifle with long barrel, magazine behind the trigger, angular futuristic polymer body and a 4x scope",
+      "stats": { "damage": 58, "rpm": 280, "mag": 12, "fire_mode": "semi", "range_studs": 460 }
+    },
+    {
+      "id": "dmr_stinger", "name": "Stinger", "category": "marksman", "sight": "red_dot",
+      "description": "compact modern tactical crossbow with folding limbs, rifle stock, loaded bolt on the rail and a red dot sight",
+      "stats": { "damage": 100, "rpm": 50, "mag": 1, "fire_mode": "single", "range_studs": 300 }
+    },
+
+    {
+      "id": "sr_obsidian", "name": "Obsidian", "category": "sniper", "sight": "scope_8x", "polycount": 5000,
+      "description": "bolt action sniper rifle with long fluted barrel, bolt handle on the right side, adjustable stock, folded bipod and a large 8x scope",
+      "stats": { "damage": 110, "rpm": 45, "mag": 5, "fire_mode": "bolt", "range_studs": 800 }
+    },
+    {
+      "id": "sr_harbinger", "name": "Harbinger .50", "category": "sniper", "sight": "scope_10x", "polycount": 5000,
+      "description": "huge anti-materiel sniper rifle with massive square muzzle brake, thick barrel, large box magazine, deployed bipod and a long 10x scope",
+      "stats": { "damage": 150, "rpm": 40, "mag": 5, "fire_mode": "bolt", "range_studs": 900 }
+    },
+    {
+      "id": "sr_specter", "name": "Specter", "category": "sniper", "sight": "scope_6x", "polycount": 5000,
+      "description": "semi-automatic sniper rifle with skeletonized thumbhole stock, slim ventilated handguard, straight magazine and a 6x scope",
+      "stats": { "damage": 85, "rpm": 120, "mag": 10, "fire_mode": "semi", "range_studs": 700 }
+    },
+    {
+      "id": "sr_needle", "name": "Needle", "category": "sniper", "sight": "scope_8x", "polycount": 5000,
+      "description": "straight pull sniper rifle with very thin long barrel, minimalist skeleton chassis, small magazine and an 8x scope",
+      "stats": { "damage": 100, "rpm": 60, "mag": 6, "fire_mode": "bolt", "range_studs": 800 }
+    },
+
+    {
+      "id": "pst_rook", "name": "Rook 9", "category": "pistol", "sight": "iron", "polycount": 2500,
+      "description": "standard modern polymer semi-automatic handgun with squared slide, accessory rail under the barrel and simple three dot iron sights",
+      "stats": { "damage": 25, "rpm": 400, "mag": 15, "fire_mode": "semi", "range_studs": 120 }
+    },
+    {
+      "id": "pst_bulldog", "name": "Bulldog", "category": "pistol", "sight": "iron", "polycount": 2500,
+      "description": "short barrel six shot revolver with chunky cylinder, hammer, rounded grip and a ramp front sight",
+      "stats": { "damage": 45, "rpm": 180, "mag": 6, "fire_mode": "semi", "range_studs": 130 }
+    },
+    {
+      "id": "pst_goliath", "name": "Goliath .50", "category": "pistol", "sight": "iron", "polycount": 2500,
+      "description": "huge heavy hand cannon pistol with long triangular barrel, oversized slide, big trigger guard and tall iron sights",
+      "stats": { "damage": 60, "rpm": 150, "mag": 7, "fire_mode": "semi", "range_studs": 140 }
+    },
+    {
+      "id": "pst_hailstorm", "name": "Hailstorm", "category": "pistol", "sight": "red_dot", "polycount": 2500,
+      "description": "fully automatic machine pistol with extended magazine sticking out of the grip, compensator on the muzzle and a tiny red dot sight on the slide",
+      "stats": { "damage": 17, "rpm": 1100, "mag": 25, "fire_mode": "auto", "range_studs": 90 }
+    },
+    {
+      "id": "pst_arbiter", "name": "Arbiter", "category": "pistol", "sight": "red_dot", "polycount": 2500,
+      "description": "three round burst pistol with angular slide cuts, ported barrel compensator, flat trigger and a compact mini red dot sight",
+      "stats": { "damage": 23, "rpm": 900, "mag": 18, "fire_mode": "burst", "range_studs": 110 }
+    },
+
+    {
+      "id": "ln_hellfire", "name": "Hellfire RL", "category": "launcher", "sight": "scope_2x", "polycount": 4000,
+      "description": "shoulder fired rocket launcher tube with flared rear exhaust, pistol grip and front grip under the tube, rocket warhead visible at the front and a side mounted 2x optic",
+      "stats": { "damage": 150, "rpm": 30, "mag": 1, "fire_mode": "single", "range_studs": 500 }
+    },
+    {
+      "id": "ln_thumper", "name": "Thumper GL", "category": "launcher", "sight": "iron", "polycount": 4000,
+      "description": "six shot revolving grenade launcher with big rotating cylinder, short wide barrel, folding stock and a flip up leaf sight",
+      "stats": { "damage": 120, "rpm": 90, "mag": 6, "fire_mode": "semi", "range_studs": 250 }
+    },
+
+    {
+      "id": "ml_talon", "name": "Talon", "category": "melee", "sight": "none", "polycount": 1500,
+      "description": "tactical combat knife with straight clip point blade, serrated spine, rubberized black handle and short crossguard",
+      "stats": { "damage": 55, "rpm": 100, "mag": 0, "fire_mode": "melee", "range_studs": 6 }
+    },
+    {
+      "id": "ml_cleaver", "name": "Cleaver", "category": "melee", "sight": "none", "polycount": 1500,
+      "description": "tactical tomahawk axe with angular blade head, spike on the back, straight wrapped handle",
+      "stats": { "damage": 75, "rpm": 70, "mag": 0, "fire_mode": "melee", "range_studs": 7 }
+    }
+  ]
+}
