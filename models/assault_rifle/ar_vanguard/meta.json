@@ -1,0 +1,21 @@
+{
+  "id": "ar_vanguard",
+  "name": "Vanguard",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 28,
+    "rpm": 750,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 300
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_vanguard.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a16597-bd32-753a-a93d-b33a6ec3c63d"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "pst_rook",
+  "name": "Rook 9",
+  "kind": "weapon",
+  "category": "pistol",
+  "mount": "slide",
+  "default_sight": null,
+  "stats": {
+    "damage": 25,
+    "rpm": 400,
+    "mag": 15,
+    "fire_mode": "semi",
+    "range_studs": 120
+  },
+  "target_length_studs": 1.0,
+  "files": [
+    "pst_rook.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a16597-c7c0-7086-8d45-d3970a09e29f"
+}

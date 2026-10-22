@@ -1,17 +1,32 @@
 {
   "ar_vanguard": {
+    "files": [
+      "ar_vanguard.glb",
+      "preview.png"
+    ],
     "image_task": "90c4b76225fd40f0aca776b77ed4a139",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ffe9566f-9de9-4ce0-8ea0-3f72747698a6.png",
-    "stage": "image_done"
+    "model_id": "01a16597-bd32-753a-a93d-b33a6ec3c63d",
+    "stage": "done"
   },
   "pst_rook": {
+    "files": [
+      "pst_rook.glb",
+      "preview.png"
+    ],
     "image_task": "18072780dc1c46d69ada0b7e4ef93a7a",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ae9b902f-31f2-4e19-b07a-c2005a66f1f7.png",
-    "stage": "image_done"
+    "model_id": "01a16597-c7c0-7086-8d45-d3970a09e29f",
+    "stage": "done"
   },
   "sight_red_dot": {
+    "files": [
+      "sight_red_dot.glb",
+      "preview.png"
+    ],
     "image_task": "42321ef7db3247ffa6043441cf8cc028",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6feaabe5-e893-41ce-be63-2760b8fc57f4.png",
-    "stage": "image_done"
+    "model_id": "01a16597-cce8-7026-8423-f0e36bd5e301",
+    "stage": "done"
   }
 }

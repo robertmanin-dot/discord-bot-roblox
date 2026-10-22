@@ -1,0 +1,17 @@
+{
+  "id": "sight_red_dot",
+  "name": "Rotpunkt",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 1.0,
+  "ads_fov": 55,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.4,
+  "files": [
+    "sight_red_dot.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a16597-cce8-7026-8423-f0e36bd5e301"
+}
