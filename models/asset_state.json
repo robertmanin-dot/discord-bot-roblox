@@ -215,7 +215,8 @@
   },
   "sight_holo": {
     "image_task": "502934557c574e92973605953322d6e6",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ba0b16ed-196f-4614-8332-2a81b1792696.png",
+    "stage": "image_done"
   },
   "sight_hybrid_4x": {
     "stage": "new"
@@ -228,7 +229,8 @@
   },
   "sight_prism_2x": {
     "image_task": "9240107a8e8f4d71a5bc14b370fb1278",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a1495a83-2ea5-404e-9dd2-90727bbc89db.png",
+    "stage": "image_done"
   },
   "sight_red_dot": {
     "files": [
