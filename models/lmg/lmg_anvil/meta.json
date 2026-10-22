@@ -1,0 +1,21 @@
+{
+  "id": "lmg_anvil",
+  "name": "Anvil",
+  "kind": "weapon",
+  "category": "lmg",
+  "mount": "rail",
+  "default_sight": "sight_prism_2x",
+  "stats": {
+    "damage": 34,
+    "rpm": 600,
+    "mag": 75,
+    "fire_mode": "auto",
+    "range_studs": 320
+  },
+  "target_length_studs": 3.6,
+  "files": [
+    "lmg_anvil.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165af-6b5f-7218-835c-dd595c98258d"
+}

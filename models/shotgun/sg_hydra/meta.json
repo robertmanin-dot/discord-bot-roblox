@@ -1,0 +1,22 @@
+{
+  "id": "sg_hydra",
+  "name": "Hydra",
+  "kind": "weapon",
+  "category": "shotgun",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 13,
+    "pellets": 8,
+    "rpm": 90,
+    "mag": 12,
+    "fire_mode": "pump",
+    "range_studs": 55
+  },
+  "target_length_studs": 3.3,
+  "files": [
+    "sg_hydra.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165af-66f1-72de-9120-735a3d4f8c08"
+}

@@ -119,11 +119,20 @@
     "stage": "done"
   },
   "dmr_stinger": {
+    "files": [
+      "dmr_stinger.glb",
+      "preview.png"
+    ],
     "image_task": "40394f05eff04734a202c43cdb3f21bd",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/bbcef011-441b-4e7f-ae69-74819d100120.png",
+    "model_id": "01a165af-6fd1-7137-86f3-336381ee5ded",
+    "stage": "done"
   },
   "dmr_vigil": {
-    "stage": "new"
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
+    "image_task": "d044a540462b48fa93de5f80c211decc",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/1c65c4d4-13dd-4d74-88ac-3951427f7f17.png",
+    "stage": "failed"
   },
   "dmr_warden": {
     "files": [
@@ -136,8 +145,14 @@
     "stage": "done"
   },
   "lmg_anvil": {
+    "files": [
+      "lmg_anvil.glb",
+      "preview.png"
+    ],
     "image_task": "2ec40b1fd7e84bac9ae51e1445c5cf6c",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a665acf3-a428-45f6-8cf7-c883d111c362.png",
+    "model_id": "01a165af-6b5f-7218-835c-dd595c98258d",
+    "stage": "done"
   },
   "lmg_juggernaut": {
     "files": [
@@ -199,10 +214,12 @@
     "stage": "done"
   },
   "pst_arbiter": {
-    "stage": "new"
+    "image_task": "3f4eed5f85d2471f9ebe0ee8b0bc1f9c",
+    "stage": "image_running"
   },
   "pst_bulldog": {
-    "stage": "new"
+    "image_task": "d80470b8914c47358573e2ff4d02d218",
+    "stage": "image_running"
   },
   "pst_goliath": {
     "files": [
@@ -225,7 +242,8 @@
     "stage": "done"
   },
   "pst_marshal": {
-    "stage": "new"
+    "image_task": "d70adb513a3f47cdbd9a99346180d996",
+    "stage": "image_running"
   },
   "pst_rook": {
     "files": [
@@ -248,8 +266,14 @@
     "stage": "done"
   },
   "sg_hydra": {
+    "files": [
+      "sg_hydra.glb",
+      "preview.png"
+    ],
     "image_task": "ab41f7ae5c64433eb2fc9537655d485b",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/70d0b98c-ee9a-47d4-9691-0eccf024f0f8.png",
+    "model_id": "01a165af-66f1-72de-9120-735a3d4f8c08",
+    "stage": "done"
   },
   "sg_maul": {
     "files": [
@@ -272,8 +296,14 @@
     "stage": "done"
   },
   "sg_twinfang": {
+    "files": [
+      "sg_twinfang.glb",
+      "preview.png"
+    ],
     "image_task": "b79b9d1e7a254fbbbf0bac89de63e147",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/758162e4-a1c8-492d-b7c1-8c7ca0997d60.png",
+    "model_id": "01a165af-4074-776f-8081-5f95df2b818a",
+    "stage": "done"
   },
   "sight_combat_3x": {
     "files": [
@@ -426,10 +456,14 @@
     "stage": "done"
   },
   "smg_razor": {
+    "files": [
+      "smg_razor.glb",
+      "preview.png"
+    ],
     "image_task": "461bbf36f20341928f0c4a5faf5b9ea4",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/9f99ad92-5579-4748-901d-4c28163c0adf.png",
     "model_id": "01a165ae-eb62-75ed-8d71-9fd658163eb4",
-    "stage": "model_running"
+    "stage": "done"
   },
   "smg_viper": {
     "files": [
@@ -462,10 +496,14 @@
     "stage": "done"
   },
   "sr_kodiak": {
-    "stage": "new"
+    "image_task": "47fe7adc664c4199b372f764cee70e19",
+    "stage": "image_running"
   },
   "sr_needle": {
-    "stage": "new"
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
+    "image_task": "ae4167085dcc449a9e431c63296877b4",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/b81eccf6-3811-4a69-b679-1e6a5d967b11.png",
+    "stage": "failed"
   },
   "sr_obsidian": {
     "files": [

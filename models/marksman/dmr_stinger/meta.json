@@ -1,0 +1,21 @@
+{
+  "id": "dmr_stinger",
+  "name": "Stinger",
+  "kind": "weapon",
+  "category": "marksman",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 100,
+    "rpm": 50,
+    "mag": 1,
+    "fire_mode": "single",
+    "range_studs": 300
+  },
+  "target_length_studs": 3.8,
+  "files": [
+    "dmr_stinger.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165af-6fd1-7137-86f3-336381ee5ded"
+}

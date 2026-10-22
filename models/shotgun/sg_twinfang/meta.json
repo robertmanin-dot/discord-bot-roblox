@@ -1,0 +1,22 @@
+{
+  "id": "sg_twinfang",
+  "name": "Twinfang",
+  "kind": "weapon",
+  "category": "shotgun",
+  "mount": "none",
+  "default_sight": null,
+  "stats": {
+    "damage": 18,
+    "pellets": 10,
+    "rpm": 300,
+    "mag": 2,
+    "fire_mode": "semi",
+    "range_studs": 40
+  },
+  "target_length_studs": 3.3,
+  "files": [
+    "sg_twinfang.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165af-4074-776f-8081-5f95df2b818a"
+}
