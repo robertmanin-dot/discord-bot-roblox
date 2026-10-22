@@ -1,0 +1,21 @@
+{
+  "id": "ar_drifter",
+  "name": "Drifter",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 24,
+    "rpm": 800,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 260
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_drifter.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165ae-4b02-75e3-a0b4-26d77702c829"
+}

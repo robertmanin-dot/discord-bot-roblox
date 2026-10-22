@@ -1,0 +1,21 @@
+{
+  "id": "ar_ironclad",
+  "name": "Ironclad",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_combat_3x",
+  "stats": {
+    "damage": 31,
+    "rpm": 700,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 320
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_ironclad.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165ae-40ed-7290-9071-5adc76ab3a0f"
+}

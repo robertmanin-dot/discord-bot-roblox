@@ -1,0 +1,21 @@
+{
+  "id": "ar_marauder",
+  "name": "Marauder",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_holo",
+  "stats": {
+    "damage": 29,
+    "rpm": 720,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 300
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_marauder.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165ae-45e8-74f9-b906-f1c45324eab2"
+}

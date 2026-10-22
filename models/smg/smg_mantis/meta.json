@@ -1,0 +1,21 @@
+{
+  "id": "smg_mantis",
+  "name": "Mantis",
+  "kind": "weapon",
+  "category": "smg",
+  "mount": "rail",
+  "default_sight": "sight_reflex_open",
+  "stats": {
+    "damage": 20,
+    "rpm": 900,
+    "mag": 64,
+    "fire_mode": "auto",
+    "range_studs": 150
+  },
+  "target_length_studs": 2.2,
+  "files": [
+    "smg_mantis.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165ae-4f2e-72ce-a30a-f53b3f8110a1"
+}

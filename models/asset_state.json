@@ -10,9 +10,14 @@
     "stage": "done"
   },
   "ar_drifter": {
+    "files": [
+      "ar_drifter.glb",
+      "preview.png"
+    ],
     "image_task": "3b3c4c7a1ea1419e92178a0f2806c217",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/8443888c-6a09-4986-9adf-b6afd0c2a73c.png",
-    "stage": "image_done"
+    "model_id": "01a165ae-4b02-75e3-a0b4-26d77702c829",
+    "stage": "done"
   },
   "ar_halcyon": {
     "files": [
@@ -25,19 +30,33 @@
     "stage": "done"
   },
   "ar_ironclad": {
+    "files": [
+      "ar_ironclad.glb",
+      "preview.png"
+    ],
     "image_task": "9f207fe0ff1247ce8a4d424b21f7ac16",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/1adc64fc-3a9a-428d-a78b-e64b82770520.png",
-    "stage": "image_done"
+    "model_id": "01a165ae-40ed-7290-9071-5adc76ab3a0f",
+    "stage": "done"
   },
   "ar_kestrel": {
+    "files": [
+      "ar_kestrel.glb",
+      "preview.png"
+    ],
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/f8959cb2-c738-4da8-9e40-dfa6125a5fe4.png",
     "model_id": "01a165ad-cba3-70cc-8ede-9335fe7dde33",
-    "stage": "model_running"
+    "stage": "done"
   },
   "ar_marauder": {
+    "files": [
+      "ar_marauder.glb",
+      "preview.png"
+    ],
     "image_task": "8a8756f4a32344468028fe0202b4abff",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/c769184d-ac9e-4a54-8b7d-c7ffb21b3c7d.png",
-    "stage": "image_done"
+    "model_id": "01a165ae-45e8-74f9-b906-f1c45324eab2",
+    "stage": "done"
   },
   "ar_ravager": {
     "files": [
@@ -100,7 +119,8 @@
     "stage": "done"
   },
   "dmr_stinger": {
-    "stage": "new"
+    "image_task": "40394f05eff04734a202c43cdb3f21bd",
+    "stage": "image_running"
   },
   "dmr_vigil": {
     "stage": "new"
@@ -116,7 +136,8 @@
     "stage": "done"
   },
   "lmg_anvil": {
-    "stage": "new"
+    "image_task": "2ec40b1fd7e84bac9ae51e1445c5cf6c",
+    "stage": "image_running"
   },
   "lmg_juggernaut": {
     "files": [
@@ -227,7 +248,8 @@
     "stage": "done"
   },
   "sg_hydra": {
-    "stage": "new"
+    "image_task": "ab41f7ae5c64433eb2fc9537655d485b",
+    "stage": "image_running"
   },
   "sg_maul": {
     "files": [
@@ -250,7 +272,8 @@
     "stage": "done"
   },
   "sg_twinfang": {
-    "stage": "new"
+    "image_task": "b79b9d1e7a254fbbbf0bac89de63e147",
+    "stage": "image_running"
   },
   "sight_combat_3x": {
     "files": [
@@ -383,9 +406,14 @@
     "stage": "done"
   },
   "smg_mantis": {
+    "files": [
+      "smg_mantis.glb",
+      "preview.png"
+    ],
     "image_task": "48071bc374184b82ae93bca5c046bfe4",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a009a98b-9905-4bf4-9b3f-434dead8b974.png",
-    "stage": "image_done"
+    "model_id": "01a165ae-4f2e-72ce-a30a-f53b3f8110a1",
+    "stage": "done"
   },
   "smg_rattler": {
     "files": [
@@ -398,7 +426,10 @@
     "stage": "done"
   },
   "smg_razor": {
-    "stage": "new"
+    "image_task": "461bbf36f20341928f0c4a5faf5b9ea4",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/9f99ad92-5579-4748-901d-4c28163c0adf.png",
+    "model_id": "01a165ae-eb62-75ed-8d71-9fd658163eb4",
+    "stage": "model_running"
   },
   "smg_viper": {
     "files": [
