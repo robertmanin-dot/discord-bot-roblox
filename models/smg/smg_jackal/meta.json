@@ -1,0 +1,21 @@
+{
+  "id": "smg_jackal",
+  "name": "Jackal",
+  "kind": "weapon",
+  "category": "smg",
+  "mount": "rail",
+  "default_sight": null,
+  "stats": {
+    "damage": 23,
+    "rpm": 850,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 170
+  },
+  "target_length_studs": 2.2,
+  "files": [
+    "smg_jackal.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a1-8dea-73f0-9e7a-8020d3889d3c"
+}

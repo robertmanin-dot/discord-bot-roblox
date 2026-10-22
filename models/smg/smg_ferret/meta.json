@@ -1,0 +1,21 @@
+{
+  "id": "smg_ferret",
+  "name": "Ferret",
+  "kind": "weapon",
+  "category": "smg",
+  "mount": "rail",
+  "default_sight": null,
+  "stats": {
+    "damage": 18,
+    "rpm": 1100,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 120
+  },
+  "target_length_studs": 2.2,
+  "files": [
+    "smg_ferret.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a2-8655-7713-b248-a138ced1f895"
+}

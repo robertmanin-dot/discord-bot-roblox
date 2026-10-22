@@ -1,0 +1,21 @@
+{
+  "id": "lmg_rampart",
+  "name": "Rampart",
+  "kind": "weapon",
+  "category": "lmg",
+  "mount": "rail",
+  "default_sight": "sight_combat_3x",
+  "stats": {
+    "damage": 32,
+    "rpm": 640,
+    "mag": 60,
+    "fire_mode": "auto",
+    "range_studs": 360
+  },
+  "target_length_studs": 3.6,
+  "files": [
+    "lmg_rampart.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a3-af7d-7098-8524-1437219bfc75"
+}

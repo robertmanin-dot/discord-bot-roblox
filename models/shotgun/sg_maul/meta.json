@@ -1,0 +1,22 @@
+{
+  "id": "sg_maul",
+  "name": "Maul-12",
+  "kind": "weapon",
+  "category": "shotgun",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 11,
+    "pellets": 8,
+    "rpm": 220,
+    "mag": 8,
+    "fire_mode": "semi",
+    "range_studs": 55
+  },
+  "target_length_studs": 3.3,
+  "files": [
+    "sg_maul.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a3-31b2-7516-ab0c-a1d9a97b39fb"
+}

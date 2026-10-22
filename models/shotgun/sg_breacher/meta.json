@@ -1,0 +1,22 @@
+{
+  "id": "sg_breacher",
+  "name": "Breacher",
+  "kind": "weapon",
+  "category": "shotgun",
+  "mount": "rail",
+  "default_sight": null,
+  "stats": {
+    "damage": 14,
+    "pellets": 8,
+    "rpm": 70,
+    "mag": 6,
+    "fire_mode": "pump",
+    "range_studs": 60
+  },
+  "target_length_studs": 3.3,
+  "files": [
+    "sg_breacher.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a2-dca3-71b6-bf28-03efccf0802e"
+}

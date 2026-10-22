@@ -70,22 +70,50 @@
     "stage": "done"
   },
   "dmr_falcon": {
-    "stage": "new"
+    "image_task": "f699a4dfc9924fc686896bd9c8723bb1",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/64b35921-5b96-4e1e-96b4-ea1cbfd14030.png",
+    "model_id": "01a165a4-2e09-7608-a9f5-de6950b2c4fb",
+    "stage": "model_running"
   },
   "dmr_lancer": {
-    "stage": "new"
+    "image_task": "e98f56a5ec5140928a3059f30633c3dc",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/7b4a8df6-70d0-4c53-977e-0cc7ae96a063.png",
+    "model_id": "01a165a4-54a1-733c-8921-f1c7f19bf416",
+    "stage": "model_running"
   },
   "dmr_warden": {
-    "stage": "new"
+    "image_task": "2206a80d6d6d455dae6afc63332005ed",
+    "stage": "image_running"
   },
   "lmg_juggernaut": {
-    "stage": "new"
+    "files": [
+      "lmg_juggernaut.glb",
+      "preview.png"
+    ],
+    "image_task": "7aa0341621364008ba902d76a3d27b96",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/e8da20ec-0460-415d-8b49-ef8b2181ec34.png",
+    "model_id": "01a165a3-aac8-7221-8d60-45d33ca9f2f4",
+    "stage": "done"
   },
   "lmg_rampart": {
-    "stage": "new"
+    "files": [
+      "lmg_rampart.glb",
+      "preview.png"
+    ],
+    "image_task": "979843bb085d4f68b3bad9143e59d6fe",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/4186dbe0-0ffe-4032-b7a1-24689cf574c0.png",
+    "model_id": "01a165a3-af7d-7098-8524-1437219bfc75",
+    "stage": "done"
   },
   "lmg_tempest": {
-    "stage": "new"
+    "files": [
+      "lmg_tempest.glb",
+      "preview.png"
+    ],
+    "image_task": "a07f0c69c0794b8ebfb9191e51380e76",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/334cf617-baf2-460d-8bd4-534e2a0cbc82.png",
+    "model_id": "01a165a4-290b-7004-8cd4-7f52f5d40d48",
+    "stage": "done"
   },
   "ln_hellfire": {
     "stage": "new"
@@ -110,13 +138,34 @@
     "stage": "done"
   },
   "sg_breacher": {
-    "stage": "new"
+    "files": [
+      "sg_breacher.glb",
+      "preview.png"
+    ],
+    "image_task": "32dc9156854c451694b3b79c5f2897a4",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/d43d1871-eb8d-4630-8167-cee967bc08fb.png",
+    "model_id": "01a165a2-dca3-71b6-bf28-03efccf0802e",
+    "stage": "done"
   },
   "sg_maul": {
-    "stage": "new"
+    "files": [
+      "sg_maul.glb",
+      "preview.png"
+    ],
+    "image_task": "e0125f854e4649c48a3f92047a7892d4",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a76e1613-582d-4255-8fee-d2cd1a91d794.png",
+    "model_id": "01a165a3-31b2-7516-ab0c-a1d9a97b39fb",
+    "stage": "done"
   },
   "sg_rhino": {
-    "stage": "new"
+    "files": [
+      "sg_rhino.glb",
+      "preview.png"
+    ],
+    "image_task": "6a1df88685f246438655f41f50535db5",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a50ed698-fca0-46b5-8c22-a93a4d5c729c.png",
+    "model_id": "01a165a3-0b71-7665-9c61-2c33071498c9",
+    "stage": "done"
   },
   "sight_combat_3x": {
     "stage": "new"
@@ -156,8 +205,14 @@
     "stage": "new"
   },
   "smg_ferret": {
+    "files": [
+      "smg_ferret.glb",
+      "preview.png"
+    ],
     "image_task": "3cec809d7a76490c9d2748c602b3a714",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/9cf7ef45-cbec-4d6a-b310-cd5395cf781d.png",
+    "model_id": "01a165a2-8655-7713-b248-a138ced1f895",
+    "stage": "done"
   },
   "smg_hornet": {
     "files": [
@@ -170,20 +225,34 @@
     "stage": "done"
   },
   "smg_jackal": {
+    "files": [
+      "smg_jackal.glb",
+      "preview.png"
+    ],
     "image_task": "220322b1647d4ae6ad1c6bf0aef9533e",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/3853f9e9-c80e-4613-b2d0-f068160745f8.png",
     "model_id": "01a165a1-8dea-73f0-9e7a-8020d3889d3c",
-    "stage": "model_running"
+    "stage": "done"
   },
   "smg_rattler": {
+    "files": [
+      "smg_rattler.glb",
+      "preview.png"
+    ],
     "image_task": "eb66b1d81272442fa9d61666646a7624",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/1f06368e-24d0-487f-8d43-742480d5f94d.png",
+    "model_id": "01a165a2-8aa6-76c6-ad87-7e424ad1a9db",
+    "stage": "done"
   },
   "smg_viper": {
+    "files": [
+      "smg_viper.glb",
+      "preview.png"
+    ],
     "image_task": "566723766438479488e7b3b25d4a1744",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/28295eef-2867-4be6-bc34-b9e3b03e8743.png",
     "model_id": "01a165a1-bd6c-7407-9e16-e7df8170485f",
-    "stage": "model_running"
+    "stage": "done"
   },
   "smg_wasp": {
     "files": [
@@ -199,7 +268,8 @@
     "stage": "new"
   },
   "sr_obsidian": {
-    "stage": "new"
+    "image_task": "f3588bc53b534fbca386f9b678bf2002",
+    "stage": "image_running"
   },
   "sr_specter": {
     "stage": "new"

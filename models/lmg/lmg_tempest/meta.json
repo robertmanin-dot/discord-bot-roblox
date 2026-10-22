@@ -1,0 +1,21 @@
+{
+  "id": "lmg_tempest",
+  "name": "Tempest",
+  "kind": "weapon",
+  "category": "lmg",
+  "mount": "rail",
+  "default_sight": "sight_holo",
+  "stats": {
+    "damage": 28,
+    "rpm": 780,
+    "mag": 120,
+    "fire_mode": "auto",
+    "range_studs": 300
+  },
+  "target_length_studs": 3.6,
+  "files": [
+    "lmg_tempest.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a4-290b-7004-8cd4-7f52f5d40d48"
+}

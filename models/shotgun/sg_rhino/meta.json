@@ -1,0 +1,22 @@
+{
+  "id": "sg_rhino",
+  "name": "Rhino Drum",
+  "kind": "weapon",
+  "category": "shotgun",
+  "mount": "rail",
+  "default_sight": "sight_holo",
+  "stats": {
+    "damage": 9,
+    "pellets": 8,
+    "rpm": 360,
+    "mag": 20,
+    "fire_mode": "auto",
+    "range_studs": 45
+  },
+  "target_length_studs": 3.3,
+  "files": [
+    "sg_rhino.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a3-0b71-7665-9c61-2c33071498c9"
+}

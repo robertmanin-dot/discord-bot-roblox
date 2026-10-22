@@ -1,0 +1,21 @@
+{
+  "id": "smg_rattler",
+  "name": "Rattler",
+  "kind": "weapon",
+  "category": "smg",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 24,
+    "rpm": 780,
+    "mag": 50,
+    "fire_mode": "auto",
+    "range_studs": 160
+  },
+  "target_length_studs": 2.2,
+  "files": [
+    "smg_rattler.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a2-8aa6-76c6-ad87-7e424ad1a9db"
+}

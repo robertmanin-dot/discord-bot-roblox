@@ -1,0 +1,21 @@
+{
+  "id": "smg_viper",
+  "name": "Viper-45",
+  "kind": "weapon",
+  "category": "smg",
+  "mount": "rail",
+  "default_sight": "sight_holo",
+  "stats": {
+    "damage": 27,
+    "rpm": 700,
+    "mag": 25,
+    "fire_mode": "auto",
+    "range_studs": 170
+  },
+  "target_length_studs": 2.2,
+  "files": [
+    "smg_viper.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a1-bd6c-7407-9e16-e7df8170485f"
+}

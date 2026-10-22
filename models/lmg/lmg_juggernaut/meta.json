@@ -1,0 +1,21 @@
+{
+  "id": "lmg_juggernaut",
+  "name": "Juggernaut",
+  "kind": "weapon",
+  "category": "lmg",
+  "mount": "rail",
+  "default_sight": "sight_red_dot",
+  "stats": {
+    "damage": 30,
+    "rpm": 700,
+    "mag": 100,
+    "fire_mode": "auto",
+    "range_studs": 320
+  },
+  "target_length_studs": 3.6,
+  "files": [
+    "lmg_juggernaut.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a3-aac8-7221-8d60-45d33ca9f2f4"
+}
