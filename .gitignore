@@ -147,3 +147,11 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# --- Creator Launch Kit ---
+# Lokale Daten (Creator-Datenbank, Logs) und Zugangsdaten nie committen
+data/
+*.db
+*.db-wal
+*.db-shm
+!.env.example

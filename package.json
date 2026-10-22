@@ -1,0 +1,25 @@
+{
+  "name": "creator-launch-kit",
+  "version": "1.0.0",
+  "description": "Creator Radar (Outreach-Tool) + Creator HQ (Discord-Bot) für Roblox-Launches",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/index.js",
+    "dev": "node --watch --disable-warning=ExperimentalWarning src/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/**/*.test.js\"",
+    "check": "node --disable-warning=ExperimentalWarning src/cli.js check",
+    "discover:youtube": "node --disable-warning=ExperimentalWarning src/cli.js youtube",
+    "discover:twitch": "node --disable-warning=ExperimentalWarning src/cli.js twitch",
+    "retention": "node --disable-warning=ExperimentalWarning src/cli.js retention"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "eld": "^2.1.0",
+    "express": "^5.3.0"
+  }
+}
