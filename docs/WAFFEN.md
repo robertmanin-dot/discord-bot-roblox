@@ -1,152 +1,186 @@
-# Waffen-Pipeline (Meshy AI → Roblox)
+# Waffen-Pipeline (WaveSpeed → Meshy → Roblox)
 
-40 eigene Low-Poly-Waffen im Stil der CoD-Waffenklassen, neutral (ohne Skins), mit
-Visier/Zielfernrohr, damit sie im FPS-Modus (Zielen über Kimme, Rotpunkt oder Scope)
-nutzbar sind.
+30 eigene Low-Poly-Waffen (realistisch, im Stil der CoD-Waffenklassen) und 10 Visiere
+zum Aufstecken. Spieler können ihre Waffe anpassen: Jede Schusswaffe hat eine leere
+Montageschiene plus Kimme & Korn, die Visiere werden einzeln draufgesetzt.
+
+**Ablauf pro Modell:**
+1. **WaveSpeed** erzeugt aus einem Text ein 2D-Konzeptbild (`concept.png`).
+2. Das Bild wird geprüft.
+3. **Meshy Image-to-3D** (Smart-Topology-Modus für Spiele) macht daraus ein Low-Poly-3D-Modell
+   mit Textur (`<id>.glb`).
 
 | Datei | Inhalt |
 |---|---|
-| `weapons/weapons.json` | Alle 40 Waffen: Name, Klasse, Visier, Meshy-Beschreibung, Startwerte (Schaden, Feuerrate, Magazin) |
-| `tools/meshy_generate.py` | Schickt die Waffen an Meshy, wartet und lädt die fertigen Modelle herunter |
-| `models/<klasse>/<id>/` | Ergebnis pro Waffe: `<id>.glb`, `preview.png`, `meta.json` |
-| `models/meshy_state.json` | Fortschritt (welche Waffe ist fertig), damit nichts doppelt bezahlt wird |
+| `weapons/weapons.json` | Waffen, Visiere, Prompts und alle Einstellungen (Bildmodell, Meshy-Modus, Polygone) |
+| `tools/generate_assets.py` | Führt den Ablauf aus, merkt sich den Fortschritt |
+| `models/<klasse>/<id>/` | `concept.png`, `<id>.glb`, `preview.png`, `meta.json` |
+| `models/asset_state.json` | Fortschritt; fertige Schritte werden nie doppelt bezahlt |
 
-## Die 40 Waffen
+## Die 30 Waffen
 
-| ID | Name | Klasse | Visier | Schaden | Schuss/Min | Magazin |
+„Standard-Visier“ ist das Visier, mit dem die Waffe ausgeliefert wird. Spieler können es tauschen.
+
+| ID | Name | Klasse | Standard-Visier | Schaden | Schuss/Min | Magazin |
 |---|---|---|---|---|---|---|
 | `ar_vanguard` | Vanguard | Sturmgewehr | Rotpunkt | 28 | 750 | 30 |
-| `ar_kestrel` | Kestrel-7 | Sturmgewehr | Holo | 26 | 820 | 30 |
-| `ar_bastion` | Bastion 762 | Sturmgewehr | Zielfernrohr 3× | 38 | 560 | 20 |
+| `ar_kestrel` | Kestrel-7 | Sturmgewehr | Holo-Visier | 26 | 820 | 30 |
+| `ar_bastion` | Bastion 762 | Sturmgewehr | Kampfvisier 3× | 38 | 560 | 20 |
 | `ar_ravager` | Ravager | Sturmgewehr | Kimme & Korn | 32 | 620 | 30 |
-| `ar_halcyon` | Halcyon | Sturmgewehr | Rotpunkt | 27 | 780 | 32 |
-| `ar_tundra` | Tundra-9 | Sturmgewehr | Holo | 25 | 860 | 30 |
-| `ar_ironclad` | Ironclad | Sturmgewehr | Kimme & Korn | 33 | 900 | 30 |
-| `ar_sentinel` | Sentinel | Sturmgewehr | Zielfernrohr 2× | 30 | 680 | 30 |
+| `ar_halcyon` | Halcyon | Sturmgewehr | Reflexvisier | 27 | 780 | 32 |
+| `ar_tundra` | Tundra-9 | Sturmgewehr | Holo-Visier | 25 | 860 | 30 |
+| `ar_sentinel` | Sentinel | Sturmgewehr | Prisma 2× | 33 | 900 | 30 |
 | `smg_wasp` | Wasp | Maschinenpistole | Rotpunkt | 21 | 950 | 32 |
 | `smg_jackal` | Jackal | Maschinenpistole | Kimme & Korn | 23 | 850 | 30 |
-| `smg_hornet` | Hornet PDW | Maschinenpistole | Rotpunkt | 19 | 1000 | 50 |
-| `smg_viper` | Viper-45 | Maschinenpistole | Holo | 27 | 700 | 25 |
+| `smg_hornet` | Hornet PDW | Maschinenpistole | Reflexvisier | 19 | 1000 | 50 |
+| `smg_viper` | Viper-45 | Maschinenpistole | Holo-Visier | 27 | 700 | 25 |
 | `smg_ferret` | Ferret | Maschinenpistole | Kimme & Korn | 18 | 1100 | 30 |
-| `smg_mantis` | Mantis | Maschinenpistole | Rotpunkt | 20 | 900 | 64 |
-| `smg_rattler` | Rattler | Maschinenpistole | Kimme & Korn | 24 | 780 | 50 |
+| `smg_rattler` | Rattler | Maschinenpistole | Rotpunkt | 24 | 780 | 50 |
 | `sg_breacher` | Breacher | Schrotflinte | Kimme & Korn | 14 ×8 | 70 | 6 |
 | `sg_maul` | Maul-12 | Schrotflinte | Rotpunkt | 11 ×8 | 220 | 8 |
-| `sg_twinfang` | Twinfang | Schrotflinte | Kimme & Korn | 18 ×10 | 300 | 2 |
-| `sg_rhino` | Rhino Drum | Schrotflinte | Holo | 9 ×8 | 360 | 20 |
+| `sg_rhino` | Rhino Drum | Schrotflinte | Holo-Visier | 9 ×8 | 360 | 20 |
 | `lmg_juggernaut` | Juggernaut | LMG | Rotpunkt | 30 | 700 | 100 |
-| `lmg_anvil` | Anvil | LMG | Kimme & Korn | 34 | 600 | 75 |
-| `lmg_rampart` | Rampart | LMG | Zielfernrohr 3× | 32 | 640 | 60 |
-| `lmg_tempest` | Tempest | LMG | Holo | 28 | 780 | 120 |
-| `dmr_falcon` | Falcon DMR | Marksman-Gewehr | Zielfernrohr 4× | 55 | 300 | 15 |
-| `dmr_lancer` | Lancer | Marksman-Gewehr | Zielfernrohr 3× | 70 | 120 | 8 |
-| `dmr_warden` | Warden | Marksman-Gewehr | Zielfernrohr 4× | 58 | 280 | 12 |
-| `dmr_stinger` | Stinger (Armbrust) | Marksman-Gewehr | Rotpunkt | 100 | 50 | 1 |
-| `sr_obsidian` | Obsidian | Scharfschützengewehr | Zielfernrohr 8× | 110 | 45 | 5 |
-| `sr_harbinger` | Harbinger .50 | Scharfschützengewehr | Zielfernrohr 10× | 150 | 40 | 5 |
-| `sr_specter` | Specter | Scharfschützengewehr | Zielfernrohr 6× | 85 | 120 | 10 |
-| `sr_needle` | Needle | Scharfschützengewehr | Zielfernrohr 8× | 100 | 60 | 6 |
+| `lmg_rampart` | Rampart | LMG | Kampfvisier 3× | 32 | 640 | 60 |
+| `lmg_tempest` | Tempest | LMG | Holo-Visier | 28 | 780 | 120 |
+| `dmr_falcon` | Falcon DMR | Marksman-Gewehr | Hybrid 4× | 55 | 300 | 15 |
+| `dmr_lancer` | Lancer | Marksman-Gewehr | Kampfvisier 3× | 70 | 120 | 8 |
+| `dmr_warden` | Warden | Marksman-Gewehr | Wärmebild 4× | 58 | 280 | 12 |
+| `sr_obsidian` | Obsidian | Scharfschützengewehr | Sniper 8× | 110 | 45 | 5 |
+| `sr_harbinger` | Harbinger .50 | Scharfschützengewehr | Sniper 12× | 150 | 40 | 5 |
+| `sr_specter` | Specter | Scharfschützengewehr | Sniper 8× | 85 | 120 | 10 |
 | `pst_rook` | Rook 9 | Pistole | Kimme & Korn | 25 | 400 | 15 |
-| `pst_bulldog` | Bulldog | Pistole | Kimme & Korn | 45 | 180 | 6 |
 | `pst_goliath` | Goliath .50 | Pistole | Kimme & Korn | 60 | 150 | 7 |
-| `pst_hailstorm` | Hailstorm | Pistole | Rotpunkt | 17 | 1100 | 25 |
-| `pst_arbiter` | Arbiter | Pistole | Rotpunkt | 23 | 900 | 18 |
-| `ln_hellfire` | Hellfire RL | Werfer | Zielfernrohr 2× | 150 | 30 | 1 |
-| `ln_thumper` | Thumper GL | Werfer | Kimme & Korn | 120 | 90 | 6 |
+| `pst_hailstorm` | Hailstorm | Pistole | Mini-Rotpunkt | 17 | 1100 | 25 |
+| `ln_hellfire` | Hellfire RL | Werfer | Prisma 2× | 150 | 30 | 1 |
 | `ml_talon` | Talon | Nahkampf | – | 55 | 100 | – |
-| `ml_cleaver` | Cleaver | Nahkampf | – | 75 | 70 | – |
 
-Die Werte sind Startwerte zum Balancen, keine fertige Balance.
+Die Werte sind Startwerte zum Balancen.
 
-## 1. Einrichten (einmalig)
+## Die 10 Visiere
 
-1. **Meshy-API-Schlüssel** im Meshy-Konto erstellen (die API braucht in der Regel ein
-   bezahltes Abo). Als Umgebungsvariable `MESHY_API_KEY` hinterlegen, **nie** ins Repo
-   oder in einen Chat schreiben.
-2. **Nur für Claude-Cloud-Sitzungen:** In den Umgebungseinstellungen unter
-   *Network access → Allowed domains* `api.meshy.ai` eintragen. Die Download-Links der
-   fertigen Modelle können auf einer anderen Meshy-Domain liegen (z. B.
-   `assets.meshy.ai`). Wenn der Download blockiert wird, die Domain aus der
-   Fehlermeldung ebenfalls eintragen.
-   Anleitung: https://code.claude.com/docs/en/cloud-environments#network-access
+| ID | Name | Zoom | ADS-FOV | Passt auf |
+|---|---|---|---|---|
+| `sight_mini_dot` | Mini-Rotpunkt | 1× | 58 | Pistolen + Gewehre |
+| `sight_red_dot` | Rotpunkt | 1× | 55 | Gewehre |
+| `sight_reflex_open` | Reflexvisier | 1× | 55 | Gewehre |
+| `sight_holo` | Holo-Visier | 1× | 55 | Gewehre |
+| `sight_prism_2x` | Prisma 2× | 2× | 35 | Gewehre |
+| `sight_combat_3x` | Kampfvisier 3× | 3× | 25 | Gewehre |
+| `sight_hybrid_4x` | Hybrid 4× | 4× | 20 | Gewehre |
+| `sight_thermal_4x` | Wärmebild 4× | 4× | 20 | Gewehre |
+| `sight_sniper_8x` | Sniper 8× | 8× | 9 | Gewehre |
+| `sight_sniper_12x` | Sniper 12× | 12× | 6 | Gewehre |
 
-## 2. Modelle erzeugen
+ADS-FOV ist das Kamera-Sichtfeld beim Zielen (normales FOV: 70).
 
-```bash
-# Nur anzeigen, was an Meshy geschickt würde (kostet nichts)
-python3 tools/meshy_generate.py --dry-run
+## 1. Einrichten
 
-# Erst EINE Waffe testen und das Ergebnis ansehen
-python3 tools/meshy_generate.py --only ar_vanguard
+API-Schlüssel als Umgebungsvariablen setzen, **nie ins Repo schreiben**:
 
-# Eine Klasse
-python3 tools/meshy_generate.py --category smg
+| Variable | Woher |
+|---|---|
+| `WAVESPEED_API_KEY` | wavespeed.ai → API Keys |
+| `MESHY_API_KEY` | meshy.ai → API |
 
-# Alle 40
-python3 tools/meshy_generate.py
+Lokal auf dem PC geht auch eine Datei `.env` im Repo-Ordner (ist in `.gitignore`):
+```
+WAVESPEED_API_KEY=...
+MESHY_API_KEY=...
 ```
 
-Nützliche Optionen:
+**In einer Claude-Cloud-Sitzung** zusätzlich unter *Network access → Allowed domains* eintragen:
+`api.wavespeed.ai`, `api.meshy.ai`, `assets.meshy.ai`. Falls ein Download trotzdem
+blockiert wird, die Domain aus der Fehlermeldung ergänzen.
+Anleitung: https://code.claude.com/docs/en/cloud-environments#network-access
+
+## 2. Erzeugen
+
+```bash
+# Zeigt Prompts und Einstellungen, kostet nichts
+python3 tools/generate_assets.py --dry-run --test
+
+# Test: Vanguard, Rook 9, Rotpunkt
+python3 tools/generate_assets.py images --test   # nur Bilder -> concept.png prüfen
+python3 tools/generate_assets.py models --test   # dann 3D-Modelle
+
+# Danach alles
+python3 tools/generate_assets.py images
+python3 tools/generate_assets.py models
+```
 
 | Option | Wirkung |
 |---|---|
-| `--no-texture` | Nur Form, keine Textur: halb so viele Meshy-Aufträge, graue Modelle |
-| `--formats glb fbx` | Zusätzlich FBX laden (Standard ist nur GLB, das enthält die Textur in einer Datei) |
-| `--polycount 3000` | Polygonzahl für alle Waffen überschreiben |
-| `--parallel 4` | Wie viele Meshy-Aufträge gleichzeitig laufen |
-| `--retry-failed` | Fehlgeschlagene Waffen erneut versuchen |
+| `images` / `models` / `all` | Nur Bilder, nur 3D oder beides |
+| `--test` | Nur die 3 Testmodelle (`test_batch` in `weapons.json`) |
+| `--only ID ...` | Nur bestimmte Waffen/Visiere |
+| `--kind weapon` / `--kind sight` | Nur Waffen oder nur Visiere |
+| `--redo` | Neu ab Bild (z. B. wenn das Bild nicht gefällt) |
+| `--redo-model` | Bild behalten, nur das 3D-Modell neu |
+| `--formats glb fbx` | Zusätzliche Formate laden (Standard: GLB) |
 
-**Kosten:** Pro Waffe laufen 2 Meshy-Aufträge (Form + Textur), bei 40 Waffen also 80.
-Jeder kostet Meshy-Credits; aktuelle Preise auf meshy.ai prüfen. Das Skript merkt sich
-fertige Waffen und bezahlt sie bei einem Neustart nicht noch einmal.
+Fehlgeschlagene Schritte werden beim nächsten Start automatisch erneut versucht.
 
-**Eine Waffe neu machen:** Ihren Eintrag aus `models/meshy_state.json` löschen und das
-Skript mit `--only <id>` starten. Gefällt die Form grundsätzlich nicht, zuerst die
-`description` in `weapons/weapons.json` anpassen.
+### Einstellungen in `weapons.json`
 
-## 3. Import in Roblox Studio (für FPS)
+- **`wavespeed.model`**: Bildmodell. Standard ist `google/nano-banana/text-to-image`.
+- **`meshy.params`**: Meshy-Modus. Standard ist Smart Topology (`model_type: smart-topology`,
+  `ai_model: meshy-t2.5`), der günstige Spielemodus mit einstellbarer Polygonzahl.
+- **Alternative Low Poly:** `meshy.params_alternative_lowpoly`. Dafür `params` ersetzen und
+  `use_polycount` auf `false` setzen, denn Low Poly ignoriert die Polygonzahl.
+- **`meshy.default_polycount`**: 4000. Einzelne Waffen haben eigene Werte, z. B. Pistolen 2500
+  und Sniper 5000.
 
-Diese Schritte kann ein lokales Claude mit Roblox-Studio-MCP übernehmen, oder man macht
-sie von Hand.
+### Kosten (laut Meshy, zum Zeitpunkt der Erstellung)
 
-1. **Import:** Studio → *Datei → 3D importieren* (3D Importer) → `models/<klasse>/<id>/<id>.glb`.
-   Ein MeshPart mit Textur entsteht.
-2. **Ausrichten:** Lauf zeigt in Richtung **-Z** des Teils (Roblox `LookVector`), Oberseite
-   (Visier) nach **+Y**.
-3. **Skalieren:** Die längste Seite auf `target_length_studs` aus `meta.json` bringen
-   (Sturmgewehr ≈ 3,2 Studs, Pistole ≈ 1,0, Sniper ≈ 4,3).
-4. **Aufbau pro Waffe** als Tool in `ReplicatedStorage/Weapons/<klasse>/<id>`:
-   ```
-   <Name> (Tool)
-   └── Handle (MeshPart, das importierte Modell)
-       ├── AimPoint   (Attachment) Mitte des Visiers / Rotpunkts / Zielfernrohrs.
-       │                           Beim Zielen (ADS) liegt die Kamera genau hier.
-       ├── Muzzle     (Attachment) Laufende: Mündungsfeuer, Projektil-Start
-       ├── RightGrip  (Attachment) Pistolengriff: rechte Hand
-       └── LeftGrip   (Attachment) Handschutz/Vordergriff: linke Hand (Pistolen: leer lassen)
-   ```
-5. **Werte als Attributes** am Tool setzen (aus `meta.json`): `Damage`, `RPM`, `MagSize`,
-   `FireMode`, `Range`, `Sight` und bei Schrotflinten `Pellets`.
-6. **Kollision:** `CanCollide = false`, `CanQuery = false`, `Massless = true` am Handle.
+Smart Topology ca. 5 Credits plus Textur ca. 10 Credits, also etwa 15 Credits pro Modell.
+40 Modelle kosten damit rund **600 Meshy-Credits**, dazu kommen Neuversuche. WaveSpeed
+rechnet pro Bild ab; den Preis zeigt die Modellseite auf wavespeed.ai.
 
-### Zielen (ADS) je Visier
+## 3. Import in Roblox Studio
 
-Vorschlag für das Kamera-Sichtfeld beim Zielen (Basis-FOV 70):
+Diese Schritte kann ein lokales Claude mit Roblox-Studio-MCP übernehmen.
 
-| Visier | ADS-FOV | Hinweis |
-|---|---|---|
-| Kimme & Korn | 60 | Kamera auf `AimPoint` |
-| Rotpunkt / Holo | 55 | Kamera auf `AimPoint`, Punkt per `SurfaceGui`/`Decal` oder Neon-Part |
-| Zielfernrohr 2×–3× | 35–25 | 3D-Optik reicht |
-| Zielfernrohr 4×–10× | 20–7 | Scope-Overlay als `ScreenGui` (schwarzer Rand + Fadenkreuz) einblenden und das Waffenmodell ausblenden |
+1. **Import:** *Datei → 3D importieren* → `<id>.glb`
+2. **Ausrichten:** Lauf/Front zeigt nach **-Z** (`LookVector`), Oberseite nach **+Y**.
+3. **Skalieren:** Die längste Seite auf `target_length_studs` aus `meta.json` bringen.
 
-Low-Poly-Meshes von Meshy haben keine echte Glaslinse. Bei starken Zielfernrohren ist das
-Overlay deshalb die übliche Lösung in Roblox-Shootern.
+### Waffe
+
+`ReplicatedStorage/Weapons/<klasse>/<id>`:
+```
+<Name> (Tool)        Attributes: Damage, RPM, MagSize, FireMode, Range, Pellets, DefaultSight
+└── Handle (MeshPart)
+    ├── SightMount (Attachment)  Oben auf der Schiene, wo Visiere einrasten
+    ├── IronAim    (Attachment)  Zielpunkt über Kimme & Korn (wenn kein Visier drauf ist)
+    ├── Muzzle     (Attachment)  Laufende
+    ├── RightGrip  (Attachment)  Pistolengriff
+    └── LeftGrip   (Attachment)  Handschutz / Vordergriff
+```
+
+### Visier
+
+`ReplicatedStorage/Sights/<id>`:
+```
+<Name> (Model)       Attributes: Zoom, AdsFov, Fits ("rail" / "slide,rail")
+└── Body (MeshPart)
+    ├── Mount    (Attachment)  Unterseite der Montage; wird auf SightMount der Waffe gesetzt
+    └── AimPoint (Attachment)  Mitte der Linse; hier liegt die Kamera beim Zielen
+```
+
+### Visier anbringen (Spiel-Code)
+
+1. Visier klonen und den `Mount` des Visiers per `WeldConstraint` oder `Motor6D` exakt auf den
+   `SightMount` der Waffe setzen.
+2. Beim Zielen die Kamera auf den `AimPoint` des Visiers legen. Ohne Visier gilt der
+   `IronAim` der Waffe.
+3. Das Sichtfeld auf `AdsFov` des Visiers stellen.
+4. Bei 4× und mehr ein Scope-Overlay (`ScreenGui` mit Fadenkreuz) einblenden und das
+   Waffenmodell ausblenden.
 
 ## Hinweise
 
-- Roblox begrenzt die Dreiecke pro MeshPart. Die Waffen sind auf 1.500–5.000 Polygone
-  eingestellt und liegen damit deutlich darunter.
-- Hochgeladene Meshes und Texturen werden von Roblox moderiert und sind erst danach nutzbar.
 - Meshy erzeugt ein Modell aus einem Stück. Bewegliche Teile (Magazin, Verschluss) sind
-  nicht getrennt. Für Nachlade-Animationen müsste man sie später in Blender abtrennen.
+  nicht getrennt.
+- Visiere müssen in Studio einmal auf eine einheitliche Größe gebracht werden (`length_studs`).
+- Hochgeladene Meshes werden von Roblox moderiert und sind erst danach nutzbar.
+- Später möglich: Schalldämpfer, Griffe und Magazine nach dem gleichen Prinzip.

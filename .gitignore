@@ -151,4 +151,4 @@ vite.config.ts.timestamp-*
 # Python
 __pycache__/
 *.part
-models/meshy_state.tmp
+models/asset_state.tmp
