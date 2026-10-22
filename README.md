@@ -1,7 +1,7 @@
 # discord-bot-roblox
 Discord bot for Roblox integration
 
-## Waffen (Meshy AI → Roblox)
+## Waffen (WaveSpeed → Meshy → Roblox)
 
-40 Low-Poly-Waffen für ein FPS-Spiel, erzeugt mit Meshy AI. Liste, Ablauf und
+30 Low-Poly-Waffen + 10 Aufsteck-Visiere für ein FPS-Spiel. Liste, Ablauf und
 Import in Roblox Studio: [docs/WAFFEN.md](docs/WAFFEN.md).
