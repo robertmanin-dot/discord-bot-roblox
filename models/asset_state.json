@@ -1,4 +1,60 @@
 {
+  "ar_bastion": {
+    "files": [
+      "ar_bastion.glb",
+      "preview.png"
+    ],
+    "image_task": "f9447ccff3f44619829cc4141d60a5e5",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/18d6316d-7af7-471b-a94e-affea6b5a87d.png",
+    "model_id": "01a165a0-1865-756c-b6cb-b535a86608af",
+    "stage": "done"
+  },
+  "ar_halcyon": {
+    "files": [
+      "ar_halcyon.glb",
+      "preview.png"
+    ],
+    "image_task": "6630d1b5a0a546bc85b7a4520cb32ce8",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/92abef56-3f04-49be-accf-caf4ae96e610.png",
+    "model_id": "01a165a0-228d-7420-96b6-755efa1e1ad4",
+    "stage": "done"
+  },
+  "ar_kestrel": {
+    "files": [
+      "ar_kestrel.glb",
+      "preview.png"
+    ],
+    "image_task": "34a5420fd7ec4c36b3f4278a5eaeef30",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/9c22159c-92ac-45c1-b3d1-7f6a1b947be7.png",
+    "model_id": "01a165a0-4fd5-7749-a282-0a9dd4211b17",
+    "stage": "done"
+  },
+  "ar_ravager": {
+    "files": [
+      "ar_ravager.glb",
+      "preview.png"
+    ],
+    "image_task": "5efa431ae58944a188ffdd17b0e6e332",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/8933b666-675a-4cb7-964a-a92540e01382.png",
+    "model_id": "01a165a0-1d07-745f-9854-65649317ff12",
+    "stage": "done"
+  },
+  "ar_sentinel": {
+    "image_task": "abb28b738fd0403e8c81619223e6fecb",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/258907ff-b53d-48c3-bc1e-a642982a182c.png",
+    "model_id": "01a165a1-6685-7270-857b-706d21fa8553",
+    "stage": "model_running"
+  },
+  "ar_tundra": {
+    "files": [
+      "ar_tundra.glb",
+      "preview.png"
+    ],
+    "image_task": "77afbc99b5404241953c7bc2f25094bc",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/59d30320-ca7d-41d3-b622-518154e6f6f9.png",
+    "model_id": "01a165a0-271d-7486-bf8e-a68395c8c065",
+    "stage": "done"
+  },
   "ar_vanguard": {
     "files": [
       "ar_vanguard.glb",
@@ -8,6 +64,36 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ffe9566f-9de9-4ce0-8ea0-3f72747698a6.png",
     "model_id": "01a16597-bd32-753a-a93d-b33a6ec3c63d",
     "stage": "done"
+  },
+  "dmr_falcon": {
+    "stage": "new"
+  },
+  "dmr_lancer": {
+    "stage": "new"
+  },
+  "dmr_warden": {
+    "stage": "new"
+  },
+  "lmg_juggernaut": {
+    "stage": "new"
+  },
+  "lmg_rampart": {
+    "stage": "new"
+  },
+  "lmg_tempest": {
+    "stage": "new"
+  },
+  "ln_hellfire": {
+    "stage": "new"
+  },
+  "ml_talon": {
+    "stage": "new"
+  },
+  "pst_goliath": {
+    "stage": "new"
+  },
+  "pst_hailstorm": {
+    "stage": "new"
   },
   "pst_rook": {
     "files": [
@@ -19,6 +105,30 @@
     "model_id": "01a16597-c7c0-7086-8d45-d3970a09e29f",
     "stage": "done"
   },
+  "sg_breacher": {
+    "stage": "new"
+  },
+  "sg_maul": {
+    "stage": "new"
+  },
+  "sg_rhino": {
+    "stage": "new"
+  },
+  "sight_combat_3x": {
+    "stage": "new"
+  },
+  "sight_holo": {
+    "stage": "new"
+  },
+  "sight_hybrid_4x": {
+    "stage": "new"
+  },
+  "sight_mini_dot": {
+    "stage": "new"
+  },
+  "sight_prism_2x": {
+    "stage": "new"
+  },
   "sight_red_dot": {
     "files": [
       "sight_red_dot.glb",
@@ -28,5 +138,52 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6feaabe5-e893-41ce-be63-2760b8fc57f4.png",
     "model_id": "01a16597-cce8-7026-8423-f0e36bd5e301",
     "stage": "done"
+  },
+  "sight_reflex_open": {
+    "stage": "new"
+  },
+  "sight_sniper_12x": {
+    "stage": "new"
+  },
+  "sight_sniper_8x": {
+    "stage": "new"
+  },
+  "sight_thermal_4x": {
+    "stage": "new"
+  },
+  "smg_ferret": {
+    "stage": "new"
+  },
+  "smg_hornet": {
+    "image_task": "45066b288f2748798f225a8b2f407606",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/067bd58c-8b17-4f3d-a2e8-0f6422f65aae.png",
+    "stage": "image_done"
+  },
+  "smg_jackal": {
+    "image_task": "220322b1647d4ae6ad1c6bf0aef9533e",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/3853f9e9-c80e-4613-b2d0-f068160745f8.png",
+    "stage": "image_done"
+  },
+  "smg_rattler": {
+    "stage": "new"
+  },
+  "smg_viper": {
+    "image_task": "566723766438479488e7b3b25d4a1744",
+    "stage": "image_running"
+  },
+  "smg_wasp": {
+    "image_task": "ce1fc264fbbb4345ae3375330e26c684",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/5d54c147-2a3e-44c4-9692-ce9c6b5122ba.png",
+    "model_id": "01a165a1-3c80-7010-8044-a4eca55201e2",
+    "stage": "model_running"
+  },
+  "sr_harbinger": {
+    "stage": "new"
+  },
+  "sr_obsidian": {
+    "stage": "new"
+  },
+  "sr_specter": {
+    "stage": "new"
   }
 }

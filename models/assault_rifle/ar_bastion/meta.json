@@ -1,0 +1,21 @@
+{
+  "id": "ar_bastion",
+  "name": "Bastion 762",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_combat_3x",
+  "stats": {
+    "damage": 38,
+    "rpm": 560,
+    "mag": 20,
+    "fire_mode": "auto",
+    "range_studs": 360
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_bastion.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a0-1865-756c-b6cb-b535a86608af"
+}

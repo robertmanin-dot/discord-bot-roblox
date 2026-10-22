@@ -1,0 +1,21 @@
+{
+  "id": "ar_kestrel",
+  "name": "Kestrel-7",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_holo",
+  "stats": {
+    "damage": 26,
+    "rpm": 820,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 280
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_kestrel.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a0-4fd5-7749-a282-0a9dd4211b17"
+}

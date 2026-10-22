@@ -1,0 +1,21 @@
+{
+  "id": "ar_ravager",
+  "name": "Ravager",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": null,
+  "stats": {
+    "damage": 32,
+    "rpm": 620,
+    "mag": 30,
+    "fire_mode": "auto",
+    "range_studs": 280
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_ravager.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a0-1d07-745f-9854-65649317ff12"
+}

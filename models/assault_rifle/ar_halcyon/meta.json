@@ -1,0 +1,21 @@
+{
+  "id": "ar_halcyon",
+  "name": "Halcyon",
+  "kind": "weapon",
+  "category": "assault_rifle",
+  "mount": "rail",
+  "default_sight": "sight_reflex_open",
+  "stats": {
+    "damage": 27,
+    "rpm": 780,
+    "mag": 32,
+    "fire_mode": "auto",
+    "range_studs": 300
+  },
+  "target_length_studs": 3.2,
+  "files": [
+    "ar_halcyon.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a0-228d-7420-96b6-755efa1e1ad4"
+}
