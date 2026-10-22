@@ -68,7 +68,8 @@ export function createApp() {
   // eslint-disable-next-line no-unused-vars
   app.use((err, req, res, next) => {
     const status = err.status || err.statusCode || 500;
-    if (status >= 500) log.error(`${req.method} ${req.originalUrl}:`, err);
+    if (status === 503) log.warn(`${req.method} ${req.originalUrl}: ${err.message}`);
+    else if (status >= 500) log.error(`${req.method} ${req.originalUrl}:`, err);
     if (err.type === 'entity.parse.failed') return res.status(400).json({ error: 'Ungültiges JSON.' });
     res.status(status).json({ error: err.message || 'Unbekannter Fehler' });
   });
