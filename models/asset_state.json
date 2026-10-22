@@ -76,14 +76,19 @@
     "stage": "model_running"
   },
   "dmr_lancer": {
+    "files": [
+      "dmr_lancer.glb",
+      "preview.png"
+    ],
     "image_task": "e98f56a5ec5140928a3059f30633c3dc",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/7b4a8df6-70d0-4c53-977e-0cc7ae96a063.png",
     "model_id": "01a165a4-54a1-733c-8921-f1c7f19bf416",
-    "stage": "model_running"
+    "stage": "done"
   },
   "dmr_warden": {
     "image_task": "2206a80d6d6d455dae6afc63332005ed",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6dd842b5-b167-4653-b897-2bde98ff037f.png",
+    "stage": "image_done"
   },
   "lmg_juggernaut": {
     "files": [
@@ -265,11 +270,13 @@
     "stage": "done"
   },
   "sr_harbinger": {
-    "stage": "new"
+    "image_task": "e85093a41d7c4d6e805414172c124531",
+    "stage": "image_running"
   },
   "sr_obsidian": {
     "image_task": "f3588bc53b534fbca386f9b678bf2002",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/2445dddb-7bfd-4cb1-a3a4-8667a85857f8.png",
+    "stage": "image_done"
   },
   "sr_specter": {
     "stage": "new"

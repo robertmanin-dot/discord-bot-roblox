@@ -1,0 +1,21 @@
+{
+  "id": "dmr_lancer",
+  "name": "Lancer",
+  "kind": "weapon",
+  "category": "marksman",
+  "mount": "rail",
+  "default_sight": "sight_combat_3x",
+  "stats": {
+    "damage": 70,
+    "rpm": 120,
+    "mag": 8,
+    "fire_mode": "lever",
+    "range_studs": 420
+  },
+  "target_length_studs": 3.8,
+  "files": [
+    "dmr_lancer.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a4-54a1-733c-8921-f1c7f19bf416"
+}
