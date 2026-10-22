@@ -1,6 +1,6 @@
 # Waffen-Pipeline (WaveSpeed → Meshy → Roblox)
 
-30 eigene Low-Poly-Waffen (realistisch, im Stil der CoD-Waffenklassen) und 10 Visiere
+48 eigene Low-Poly-Waffen (realistisch, im Stil der CoD-Waffenklassen) und 10 Visiere
 zum Aufstecken. Spieler können ihre Waffe anpassen: Jede Schusswaffe hat eine leere
 Montageschiene plus Kimme & Korn, die Visiere werden einzeln draufgesetzt.
 
@@ -17,9 +17,10 @@ Montageschiene plus Kimme & Korn, die Visiere werden einzeln draufgesetzt.
 | `models/<klasse>/<id>/` | `concept.png`, `<id>.glb`, `preview.png`, `meta.json` |
 | `models/asset_state.json` | Fortschritt; fertige Schritte werden nie doppelt bezahlt |
 
-## Die 30 Waffen
+## Die 48 Waffen
 
 „Standard-Visier“ ist das Visier, mit dem die Waffe ausgeliefert wird. Spieler können es tauschen.
+Waffen ohne Schiene (Doppelflinte, Revolver, Nahkampf) nehmen keine Aufsteck-Visiere.
 
 | ID | Name | Klasse | Standard-Visier | Schaden | Schuss/Min | Magazin |
 |---|---|---|---|---|---|---|
@@ -30,29 +31,47 @@ Montageschiene plus Kimme & Korn, die Visiere werden einzeln draufgesetzt.
 | `ar_halcyon` | Halcyon | Sturmgewehr | Reflexvisier | 27 | 780 | 32 |
 | `ar_tundra` | Tundra-9 | Sturmgewehr | Holo-Visier | 25 | 860 | 30 |
 | `ar_sentinel` | Sentinel | Sturmgewehr | Prisma 2× | 33 | 900 | 30 |
+| `ar_ironclad` | Ironclad | Sturmgewehr | Kampfvisier 3× | 31 | 700 | 30 |
+| `ar_marauder` | Marauder | Sturmgewehr | Holo-Visier | 29 | 720 | 30 |
+| `ar_drifter` | Drifter | Sturmgewehr | Rotpunkt | 24 | 800 | 30 |
 | `smg_wasp` | Wasp | Maschinenpistole | Rotpunkt | 21 | 950 | 32 |
 | `smg_jackal` | Jackal | Maschinenpistole | Kimme & Korn | 23 | 850 | 30 |
 | `smg_hornet` | Hornet PDW | Maschinenpistole | Reflexvisier | 19 | 1000 | 50 |
 | `smg_viper` | Viper-45 | Maschinenpistole | Holo-Visier | 27 | 700 | 25 |
 | `smg_ferret` | Ferret | Maschinenpistole | Kimme & Korn | 18 | 1100 | 30 |
 | `smg_rattler` | Rattler | Maschinenpistole | Rotpunkt | 24 | 780 | 50 |
+| `smg_mantis` | Mantis | Maschinenpistole | Reflexvisier | 20 | 900 | 64 |
+| `smg_razor` | Razor | Maschinenpistole | Holo-Visier | 19 | 1150 | 25 |
 | `sg_breacher` | Breacher | Schrotflinte | Kimme & Korn | 14 ×8 | 70 | 6 |
 | `sg_maul` | Maul-12 | Schrotflinte | Rotpunkt | 11 ×8 | 220 | 8 |
 | `sg_rhino` | Rhino Drum | Schrotflinte | Holo-Visier | 9 ×8 | 360 | 20 |
+| `sg_twinfang` | Twinfang | Schrotflinte | Kimme & Korn | 18 ×10 | 300 | 2 |
+| `sg_hydra` | Hydra | Schrotflinte | Rotpunkt | 13 ×8 | 90 | 12 |
 | `lmg_juggernaut` | Juggernaut | LMG | Rotpunkt | 30 | 700 | 100 |
 | `lmg_rampart` | Rampart | LMG | Kampfvisier 3× | 32 | 640 | 60 |
 | `lmg_tempest` | Tempest | LMG | Holo-Visier | 28 | 780 | 120 |
+| `lmg_anvil` | Anvil | LMG | Prisma 2× | 34 | 600 | 75 |
 | `dmr_falcon` | Falcon DMR | Marksman-Gewehr | Hybrid 4× | 55 | 300 | 15 |
 | `dmr_lancer` | Lancer | Marksman-Gewehr | Kampfvisier 3× | 70 | 120 | 8 |
 | `dmr_warden` | Warden | Marksman-Gewehr | Wärmebild 4× | 58 | 280 | 12 |
+| `dmr_stinger` | Stinger | Marksman-Gewehr | Rotpunkt | 100 | 50 | 1 |
+| `dmr_vigil` | Vigil | Marksman-Gewehr | Hybrid 4× | 52 | 330 | 20 |
 | `sr_obsidian` | Obsidian | Scharfschützengewehr | Sniper 8× | 110 | 45 | 5 |
 | `sr_harbinger` | Harbinger .50 | Scharfschützengewehr | Sniper 12× | 150 | 40 | 5 |
 | `sr_specter` | Specter | Scharfschützengewehr | Sniper 8× | 85 | 120 | 10 |
+| `sr_needle` | Needle | Scharfschützengewehr | Sniper 8× | 100 | 60 | 6 |
+| `sr_kodiak` | Kodiak | Scharfschützengewehr | Sniper 12× | 125 | 40 | 5 |
 | `pst_rook` | Rook 9 | Pistole | Kimme & Korn | 25 | 400 | 15 |
 | `pst_goliath` | Goliath .50 | Pistole | Kimme & Korn | 60 | 150 | 7 |
 | `pst_hailstorm` | Hailstorm | Pistole | Mini-Rotpunkt | 17 | 1100 | 25 |
+| `pst_bulldog` | Bulldog | Pistole | Kimme & Korn | 45 | 180 | 6 |
+| `pst_arbiter` | Arbiter | Pistole | Mini-Rotpunkt | 23 | 900 | 18 |
+| `pst_marshal` | Marshal | Pistole | Kimme & Korn | 34 | 300 | 10 |
 | `ln_hellfire` | Hellfire RL | Werfer | Prisma 2× | 150 | 30 | 1 |
+| `ln_thumper` | Thumper GL | Werfer | Rotpunkt | 120 | 90 | 6 |
 | `ml_talon` | Talon | Nahkampf | – | 55 | 100 | – |
+| `ml_cleaver` | Cleaver | Nahkampf | – | 75 | 70 | – |
+| `ml_ronin` | Ronin | Nahkampf | – | 85 | 80 | – |
 
 Die Werte sind Startwerte zum Balancen.
 
@@ -133,7 +152,7 @@ Fehlgeschlagene Schritte werden beim nächsten Start automatisch erneut versucht
 ### Kosten (laut Meshy, zum Zeitpunkt der Erstellung)
 
 Smart Topology ca. 5 Credits plus Textur ca. 10 Credits, also etwa 15 Credits pro Modell.
-40 Modelle kosten damit rund **600 Meshy-Credits**, dazu kommen Neuversuche. WaveSpeed
+58 Modelle kosten damit rund **870 Meshy-Credits**, dazu kommen Neuversuche. WaveSpeed
 rechnet pro Bild ab; den Preis zeigt die Modellseite auf wavespeed.ai.
 
 ## 3. Import in Roblox Studio

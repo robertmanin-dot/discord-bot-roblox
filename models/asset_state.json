@@ -9,6 +9,11 @@
     "model_id": "01a165a0-1865-756c-b6cb-b535a86608af",
     "stage": "done"
   },
+  "ar_drifter": {
+    "image_task": "3b3c4c7a1ea1419e92178a0f2806c217",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/8443888c-6a09-4986-9adf-b6afd0c2a73c.png",
+    "stage": "image_done"
+  },
   "ar_halcyon": {
     "files": [
       "ar_halcyon.glb",
@@ -19,11 +24,20 @@
     "model_id": "01a165a0-228d-7420-96b6-755efa1e1ad4",
     "stage": "done"
   },
+  "ar_ironclad": {
+    "image_task": "9f207fe0ff1247ce8a4d424b21f7ac16",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/1adc64fc-3a9a-428d-a78b-e64b82770520.png",
+    "stage": "image_done"
+  },
   "ar_kestrel": {
-    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
-    "image_task": "a70a5f3750504486b16b0f93a9b68d74",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/f8959cb2-c738-4da8-9e40-dfa6125a5fe4.png",
-    "stage": "failed"
+    "model_id": "01a165ad-cba3-70cc-8ede-9335fe7dde33",
+    "stage": "model_running"
+  },
+  "ar_marauder": {
+    "image_task": "8a8756f4a32344468028fe0202b4abff",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/c769184d-ac9e-4a54-8b7d-c7ffb21b3c7d.png",
+    "stage": "image_done"
   },
   "ar_ravager": {
     "files": [
@@ -85,6 +99,12 @@
     "model_id": "01a165a4-54a1-733c-8921-f1c7f19bf416",
     "stage": "done"
   },
+  "dmr_stinger": {
+    "stage": "new"
+  },
+  "dmr_vigil": {
+    "stage": "new"
+  },
   "dmr_warden": {
     "files": [
       "dmr_warden.glb",
@@ -94,6 +114,9 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6dd842b5-b167-4653-b897-2bde98ff037f.png",
     "model_id": "01a165a4-ce18-715d-afd9-1345c5b00de8",
     "stage": "done"
+  },
+  "lmg_anvil": {
+    "stage": "new"
   },
   "lmg_juggernaut": {
     "files": [
@@ -135,6 +158,15 @@
     "model_id": "01a165a5-f12b-70a7-81c2-e375c5ff2809",
     "stage": "done"
   },
+  "ln_thumper": {
+    "stage": "new"
+  },
+  "ml_cleaver": {
+    "stage": "new"
+  },
+  "ml_ronin": {
+    "stage": "new"
+  },
   "ml_talon": {
     "files": [
       "ml_talon.glb",
@@ -144,6 +176,12 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6aa8d379-a541-4471-af21-df50ce8b59e7.png",
     "model_id": "01a165a5-f5f8-7376-ad78-6ea5ba12e5df",
     "stage": "done"
+  },
+  "pst_arbiter": {
+    "stage": "new"
+  },
+  "pst_bulldog": {
+    "stage": "new"
   },
   "pst_goliath": {
     "files": [
@@ -165,6 +203,9 @@
     "model_id": "01a165a5-ec64-7074-95c6-070c418b2cbb",
     "stage": "done"
   },
+  "pst_marshal": {
+    "stage": "new"
+  },
   "pst_rook": {
     "files": [
       "pst_rook.glb",
@@ -185,6 +226,9 @@
     "model_id": "01a165a2-dca3-71b6-bf28-03efccf0802e",
     "stage": "done"
   },
+  "sg_hydra": {
+    "stage": "new"
+  },
   "sg_maul": {
     "files": [
       "sg_maul.glb",
@@ -204,6 +248,9 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a50ed698-fca0-46b5-8c22-a93a4d5c729c.png",
     "model_id": "01a165a3-0b71-7665-9c61-2c33071498c9",
     "stage": "done"
+  },
+  "sg_twinfang": {
+    "stage": "new"
   },
   "sight_combat_3x": {
     "files": [
@@ -335,6 +382,11 @@
     "model_id": "01a165a1-8dea-73f0-9e7a-8020d3889d3c",
     "stage": "done"
   },
+  "smg_mantis": {
+    "image_task": "48071bc374184b82ae93bca5c046bfe4",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a009a98b-9905-4bf4-9b3f-434dead8b974.png",
+    "stage": "image_done"
+  },
   "smg_rattler": {
     "files": [
       "smg_rattler.glb",
@@ -344,6 +396,9 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/1f06368e-24d0-487f-8d43-742480d5f94d.png",
     "model_id": "01a165a2-8aa6-76c6-ad87-7e424ad1a9db",
     "stage": "done"
+  },
+  "smg_razor": {
+    "stage": "new"
   },
   "smg_viper": {
     "files": [
@@ -374,6 +429,12 @@
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/70ede792-bdfa-462b-b59e-c7a6777bc027.png",
     "model_id": "01a165a5-20c6-77ad-9629-ab49a1353f6d",
     "stage": "done"
+  },
+  "sr_kodiak": {
+    "stage": "new"
+  },
+  "sr_needle": {
+    "stage": "new"
   },
   "sr_obsidian": {
     "files": [
