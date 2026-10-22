@@ -1,0 +1,17 @@
+{
+  "ar_vanguard": {
+    "image_task": "90c4b76225fd40f0aca776b77ed4a139",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ffe9566f-9de9-4ce0-8ea0-3f72747698a6.png",
+    "stage": "image_done"
+  },
+  "pst_rook": {
+    "image_task": "18072780dc1c46d69ada0b7e4ef93a7a",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ae9b902f-31f2-4e19-b07a-c2005a66f1f7.png",
+    "stage": "image_done"
+  },
+  "sight_red_dot": {
+    "image_task": "42321ef7db3247ffa6043441cf8cc028",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/6feaabe5-e893-41ce-be63-2760b8fc57f4.png",
+    "stage": "image_done"
+  }
+}
