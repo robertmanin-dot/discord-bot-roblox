@@ -87,7 +87,7 @@ export default function systemRoutes() {
       secrets: secretStatus(),
       counts: counts(),
       quota: quotaToday(),
-      game: { name: getSettings().game.name, launchAt: getSettings().game.launchAt },
+      game: { name: getSettings().game.name, launchAt: getSettings().game.launchAt, timezone: getSettings().game.timezone },
     });
   });
 
