@@ -1,0 +1,17 @@
+{
+  "id": "sight_thermal_4x",
+  "name": "Wärmebild 4×",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 4.0,
+  "ads_fov": 20,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.7,
+  "files": [
+    "sight_thermal_4x.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a8-2b60-7219-a80d-6e79d9d1fa93"
+}

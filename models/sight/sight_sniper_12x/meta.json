@@ -1,0 +1,17 @@
+{
+  "id": "sight_sniper_12x",
+  "name": "Sniper 12×",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 12.0,
+  "ads_fov": 6,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 1.2,
+  "files": [
+    "sight_sniper_12x.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a8-a120-7031-8360-25309bc9bd5a"
+}

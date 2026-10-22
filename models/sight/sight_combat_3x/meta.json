@@ -1,0 +1,17 @@
+{
+  "id": "sight_combat_3x",
+  "name": "Kampfvisier 3×",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 3.0,
+  "ads_fov": 25,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.6,
+  "files": [
+    "sight_combat_3x.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a7-3f57-752c-ac56-692fdf947f85"
+}

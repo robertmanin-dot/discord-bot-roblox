@@ -1,0 +1,17 @@
+{
+  "id": "sight_hybrid_4x",
+  "name": "Hybrid 4×",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 4.0,
+  "ads_fov": 20,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.7,
+  "files": [
+    "sight_hybrid_4x.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a7-db22-717a-bee8-35008f73ccb6"
+}

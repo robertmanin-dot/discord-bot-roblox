@@ -20,14 +20,10 @@
     "stage": "done"
   },
   "ar_kestrel": {
-    "files": [
-      "ar_kestrel.glb",
-      "preview.png"
-    ],
-    "image_task": "34a5420fd7ec4c36b3f4278a5eaeef30",
-    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/9c22159c-92ac-45c1-b3d1-7f6a1b947be7.png",
-    "model_id": "01a165a0-4fd5-7749-a282-0a9dd4211b17",
-    "stage": "done"
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
+    "image_task": "a70a5f3750504486b16b0f93a9b68d74",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/f8959cb2-c738-4da8-9e40-dfa6125a5fe4.png",
+    "stage": "failed"
   },
   "ar_ravager": {
     "files": [
@@ -210,27 +206,54 @@
     "stage": "done"
   },
   "sight_combat_3x": {
+    "files": [
+      "sight_combat_3x.glb",
+      "preview.png"
+    ],
     "image_task": "3f3df167116641f390c33392fce90fde",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/b97ab6c7-0b6f-46cd-bfc6-18554c90d7e6.png",
+    "model_id": "01a165a7-3f57-752c-ac56-692fdf947f85",
+    "stage": "done"
   },
   "sight_holo": {
+    "files": [
+      "sight_holo.glb",
+      "preview.png"
+    ],
     "image_task": "502934557c574e92973605953322d6e6",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/ba0b16ed-196f-4614-8332-2a81b1792696.png",
-    "stage": "image_done"
+    "model_id": "01a165a7-109f-7455-96d2-f1f3aa07c835",
+    "stage": "done"
   },
   "sight_hybrid_4x": {
-    "stage": "new"
+    "files": [
+      "sight_hybrid_4x.glb",
+      "preview.png"
+    ],
+    "image_task": "a12ea779d73e4834b249ff94eede9f3f",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a8bc787d-d5e0-4467-a6e4-950ea912abcc.png",
+    "model_id": "01a165a7-db22-717a-bee8-35008f73ccb6",
+    "stage": "done"
   },
   "sight_mini_dot": {
+    "files": [
+      "sight_mini_dot.glb",
+      "preview.png"
+    ],
     "image_task": "58ee106b0d4843e49f97414c2c98ca98",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/719b3be6-5eff-4648-8ed2-7d7b0c222143.png",
     "model_id": "01a165a6-7291-72e0-8caf-d807d92eb689",
-    "stage": "model_running"
+    "stage": "done"
   },
   "sight_prism_2x": {
+    "files": [
+      "sight_prism_2x.glb",
+      "preview.png"
+    ],
     "image_task": "9240107a8e8f4d71a5bc14b370fb1278",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/a1495a83-2ea5-404e-9dd2-90727bbc89db.png",
-    "stage": "image_done"
+    "model_id": "01a165a7-1451-7448-88a7-1f9840457826",
+    "stage": "done"
   },
   "sight_red_dot": {
     "files": [
@@ -243,19 +266,44 @@
     "stage": "done"
   },
   "sight_reflex_open": {
+    "files": [
+      "sight_reflex_open.glb",
+      "preview.png"
+    ],
     "image_task": "47ee192301f349eda5c2c03589dcfe28",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/249002ac-fa29-4b0a-8fd1-16346ad33fcd.png",
     "model_id": "01a165a6-c113-7650-b009-4b00b45a8872",
-    "stage": "model_running"
+    "stage": "done"
   },
   "sight_sniper_12x": {
-    "stage": "new"
+    "files": [
+      "sight_sniper_12x.glb",
+      "preview.png"
+    ],
+    "image_task": "a5fa6ebd2b58415fabbdf4a224946700",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/c633ab8f-8824-47d6-95cf-dbf41d445b42.png",
+    "model_id": "01a165a8-a120-7031-8360-25309bc9bd5a",
+    "stage": "done"
   },
   "sight_sniper_8x": {
-    "stage": "new"
+    "files": [
+      "sight_sniper_8x.glb",
+      "preview.png"
+    ],
+    "image_task": "7218d9ab54fe44fc84eda6e3cbb3654f",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/028ed4c5-e21b-4e34-8327-26c89df8f6c3.png",
+    "model_id": "01a165a8-7b65-7612-a0c3-1769c4c0ddde",
+    "stage": "done"
   },
   "sight_thermal_4x": {
-    "stage": "new"
+    "files": [
+      "sight_thermal_4x.glb",
+      "preview.png"
+    ],
+    "image_task": "c3a9d8ffdf6240b78aee936e7e0f263a",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/48e188c7-a90f-4c87-b01a-a62916b37ac8.png",
+    "model_id": "01a165a8-2b60-7219-a80d-6e79d9d1fa93",
+    "stage": "done"
   },
   "smg_ferret": {
     "files": [

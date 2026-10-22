@@ -40,7 +40,7 @@
     },
     {
       "id": "ar_kestrel", "name": "Kestrel-7", "category": "assault_rifle", "mount": "rail", "default_sight": "sight_holo",
-      "description": "compact bullpup assault rifle with the magazine behind the pistol grip and an angular polymer body",
+      "description": "compact bullpup assault rifle with a clearly visible straight box magazine sticking down behind the pistol grip under the stock, angular polymer body",
       "stats": { "damage": 26, "rpm": 820, "mag": 30, "fire_mode": "auto", "range_studs": 280 }
     },
     {

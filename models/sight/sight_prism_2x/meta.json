@@ -1,0 +1,17 @@
+{
+  "id": "sight_prism_2x",
+  "name": "Prisma 2×",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 2.0,
+  "ads_fov": 35,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.5,
+  "files": [
+    "sight_prism_2x.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a7-1451-7448-88a7-1f9840457826"
+}

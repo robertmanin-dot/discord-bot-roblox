@@ -1,0 +1,17 @@
+{
+  "id": "sight_sniper_8x",
+  "name": "Sniper 8×",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 8.0,
+  "ads_fov": 9,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 1.0,
+  "files": [
+    "sight_sniper_8x.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a8-7b65-7612-a0c3-1769c4c0ddde"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "sight_mini_dot",
+  "name": "Mini-Rotpunkt",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 1.0,
+  "ads_fov": 58,
+  "fits": [
+    "slide",
+    "rail"
+  ],
+  "target_length_studs": 0.25,
+  "files": [
+    "sight_mini_dot.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a6-7291-72e0-8caf-d807d92eb689"
+}

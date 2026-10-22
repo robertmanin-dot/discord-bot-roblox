@@ -1,0 +1,17 @@
+{
+  "id": "sight_holo",
+  "name": "Holo-Visier",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 1.0,
+  "ads_fov": 55,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.5,
+  "files": [
+    "sight_holo.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a7-109f-7455-96d2-f1f3aa07c835"
+}

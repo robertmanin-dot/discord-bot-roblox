@@ -1,0 +1,17 @@
+{
+  "id": "sight_reflex_open",
+  "name": "Reflexvisier",
+  "kind": "sight",
+  "category": "sight",
+  "zoom": 1.0,
+  "ads_fov": 55,
+  "fits": [
+    "rail"
+  ],
+  "target_length_studs": 0.4,
+  "files": [
+    "sight_reflex_open.glb",
+    "preview.png"
+  ],
+  "meshy_task_id": "01a165a6-c113-7650-b009-4b00b45a8872"
+}
