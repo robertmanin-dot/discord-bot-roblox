@@ -23,6 +23,7 @@ export const DEFAULTS = {
     senderName: '',           // Absendername in Nachrichten
     studioName: '',
     contactEmail: '',         // Studio-Mail
+    parentFormUrl: '',        // Link zum Eltern-Einverständnis (z. B. Online-Formular oder PDF)
     codeReward_de: 'ein exklusives Item, das man nicht kaufen kann',
     codeReward_en: 'an exclusive item you can\'t buy',
   },

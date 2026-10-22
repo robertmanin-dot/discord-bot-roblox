@@ -359,7 +359,8 @@ async function onModal(interaction, ctx) {
   else ctx.postLog(`⚠️ Bewerbung #${application.id} konnte nicht in #bewerbungen gepostet werden.`).catch(() => {});
 
   if (application.status === 'eltern_ausstehend') {
-    const contact = ctx.settings().game.contactEmail || channelMention(ctx, 'reviews', 'dem Team');
+    const game = ctx.settings().game;
+    const contact = game.parentFormUrl || game.contactEmail || channelMention(ctx, 'reviews', 'dem Team');
     return finish(tr(T, locale, 'thanksParent', { age: ctx.settings().discord.parentConsentUnder, contact }));
   }
   return finish(msg ? tr(T, locale, 'thanks') : tr(T, locale, 'reviewFailed'));
