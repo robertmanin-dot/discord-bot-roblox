@@ -195,15 +195,22 @@
     "stage": "done"
   },
   "ln_thumper": {
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
     "image_task": "0a90bac8f3874768917335ddf9cc1c18",
     "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/d4cca315-b21f-448e-87dc-fef107446a3e.png",
-    "stage": "image_done"
+    "stage": "failed"
   },
   "ml_cleaver": {
-    "stage": "new"
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
+    "image_task": "8cc6420a5b8b4ca482bf2e091304384a",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/3e590028-b9ca-4aaa-8c82-f1fb750954d3.png",
+    "stage": "failed"
   },
   "ml_ronin": {
-    "stage": "new"
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
+    "image_task": "26c8e86feff04a2182385f7f1ceaa53c",
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/14b8816e-8f21-4c15-8ad0-2802b2e3c61c.png",
+    "stage": "failed"
   },
   "ml_talon": {
     "files": [
@@ -504,8 +511,10 @@
     "stage": "done"
   },
   "sr_kodiak": {
+    "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
     "image_task": "47fe7adc664c4199b372f764cee70e19",
-    "stage": "image_running"
+    "image_url": "https://d2h7xmz5gqybh9.cloudfront.net/output/d1b4d124-a37a-4a7a-b94a-106d500b8d1c.png",
+    "stage": "failed"
   },
   "sr_needle": {
     "error": "HTTP 402 POST https://api.meshy.ai/openapi/v1/image-to-3d: {\"message\":\"API key credit limit reached\"}",
