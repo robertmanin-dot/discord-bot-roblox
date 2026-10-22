@@ -230,7 +230,8 @@ export function addContact(creatorId, { type, value, label, source, is_business 
 export function setOutreachStatus(creatorId, to, { campaignId = getActiveCampaignId(), force = false, data = {}, extra = {} } = {}) {
   if (!ALL_STATUSES.includes(to)) throw new Error(`Unbekannter Status: ${to}`);
   const db = getDb();
-  return db.tx(() => {
+  let event = null;
+  const updated = db.tx(() => {
     const row = ensureOutreach(creatorId, campaignId);
     const from = row.status;
     if (from === to && !Object.keys(extra).length) return null;
@@ -240,15 +241,19 @@ export function setOutreachStatus(creatorId, to, { campaignId = getActiveCampaig
       const toRank = statusRank(to);
       if (toRank >= 0 && fromRank >= 0 && toRank < fromRank) return null;
     }
-    const set = { status: to, status_changed_at: nowIso(), ...extra };
+    // Keep status_changed_at when only extra columns change.
+    const set = from === to ? { ...extra } : { status: to, status_changed_at: nowIso(), ...extra };
     const cols = Object.keys(set);
     db.run(`UPDATE outreach SET ${cols.map((c) => `${c} = :${c}`).join(', ')} WHERE id = :id`, { ...set, id: row.id });
     if (from !== to) {
       logActivity(creatorId, 'status', { from, to, ...data }, campaignId);
-      bus.emit('outreach.status', { creatorId, outreachId: row.id, campaignId, from, to });
+      event = { creatorId, outreachId: row.id, campaignId, from, to };
     }
     return db.get('SELECT * FROM outreach WHERE id = :id', { id: row.id });
   });
+  // Emit after the transaction so listeners always see committed data.
+  if (event) bus.emit('outreach.status', event);
+  return updated;
 }
 
 /** Updates outreach columns without changing the status. */
