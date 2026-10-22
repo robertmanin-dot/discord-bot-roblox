@@ -1,0 +1,30 @@
+{
+  "name": "wonder-wars-bot",
+  "version": "1.0.0",
+  "description": "Discord-Bot für die Wonder-Wars-Spieltester (Roblox)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy-commands": "node src/deploy-commands.js",
+    "test": "node --test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertmanin-dot/discord-bot-roblox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robertmanin-dot/discord-bot-roblox/issues"
+  },
+  "homepage": "https://github.com/robertmanin-dot/discord-bot-roblox#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "discord.js": "^14.27.0",
+    "dotenv": "^18.0.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
