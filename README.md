@@ -3,7 +3,8 @@
 Dein Werkzeugkasten für den Launch deines Roblox-Spiels mit kleinen Creatorn:
 
 - **Creator Radar** – findet kleine Roblox-Creator auf YouTube und Twitch (TikTok/Instagram per Klick), bereitet für jeden eine passende Nachricht vor und zeigt dir, wer geantwortet hat.
-- **Creator HQ** – dein Discord-Bot: Bewerbungen, persönliche Einladungslinks, Creator-Codes, Playtests, Bug-Meldungen, Launch-Countdown und Ranglisten.
+- **Discord ohne Bot** – Anleitung und fertige Texte, wie du Bewerbungen, Playtests, Bugs und die Launch Hour mit Discords eigenen Funktionen und Google-Formularen machst: [docs/DISCORD-OHNE-BOT.md](docs/DISCORD-OHNE-BOT.md).
+- **Creator HQ (optional)** – ein Discord-Bot, der das automatisiert. Nur nötig, wenn ein Rechner dauerhaft läuft. Standard: aus.
 - **Vorlagen & Anleitungen** – Nachrichten in 7 Sprachen, Creator-Programm, Launch-Ablauf, Datenschutz- und Eltern-Vorlagen.
 
 Alles läuft auf deinem PC. Die Daten bleiben bei dir. **Gesendet wird immer von dir selbst** – das Tool öffnet nur das richtige Fenster und kopiert den Text.
@@ -23,7 +24,7 @@ Du brauchst **Node.js 22.13 oder neuer** (am besten die aktuelle LTS-Version von
 
 Danach öffnet sich das Dashboard im Browser: **http://localhost:3000**
 
-Das Fenster muss offen bleiben, solange das Tool (und der Discord-Bot) laufen soll. Beenden mit `Strg + C`.
+Das Tool läuft, solange das Fenster offen ist. **Kein Dauerbetrieb nötig:** Starte es einfach, wenn du Creator suchst oder anschreibst, und schließ es danach (`Strg + C` oder Fenster zu).
 
 ---
 
@@ -31,12 +32,13 @@ Das Fenster muss offen bleiben, solange das Tool (und der Discord-Bot) laufen so
 
 Die Startseite im Dashboard zeigt eine Checkliste mit allem, was noch fehlt. Die genauen Schritte stehen in **[docs/EINRICHTUNG.md](docs/EINRICHTUNG.md)**.
 
-1. **Einstellungen → Spiel:** Name, 1–2 Sätze Beschreibung (Deutsch + Englisch), Launch-Termin, Absendername, Studio-Name, Link zur Datenschutzerklärung, Infoseite, allgemeiner Discord-Link.
+1. **Einstellungen → Spiel:** Name, 1–2 Sätze Beschreibung (Deutsch + Englisch), Launch-Termin, Absendername, Studio-Name, allgemeiner Discord-Link.
+   - **Datenschutz-Link: empfohlen.** Ein Google-Doc reicht („Jeder mit dem Link kann ansehen“). Ohne Link setzt das Tool automatisch einen kurzen Datenschutz-Hinweis in jede Nachricht.
+   - **Infoseite: optional.** Ohne sie verlinken die Nachrichten dein Roblox-Spiel.
 2. **Einrichtung → YouTube-API-Schlüssel** (kostenlos, Google Cloud Console).
 3. **Einrichtung → Twitch Client-ID + Secret** (optional, kostenlos).
-4. **Einrichtung → Discord-Bot-Token**, dann den Bot mit dem Button im Dashboard auf deinen Server einladen.
-5. Im Discord einmal **`/setup`** eingeben. Der Bot legt Rollen und Kanäle an.
-6. **Einstellungen → Roblox-Spiel verknüpfen** (für die Live-Spielerzahl beim Launch).
+4. **Discord mit Bordmitteln einrichten** (Rollen, Kanäle, Onboarding, Formulare): [docs/DISCORD-OHNE-BOT.md](docs/DISCORD-OHNE-BOT.md).
+5. *Optional, nur wenn ein Rechner dauerhaft läuft:* Discord-Bot einschalten (Einstellungen → Discord → „Discord-Bot verwenden“), Token unter Einrichtung eintragen, Bot einladen, im Discord `/setup`.
 
 Prüfen geht auch im Terminal: `npm run check`
 
@@ -55,7 +57,7 @@ Prüfen geht auch im Terminal: `npm run check`
    - **S** = gesendet · **L** = später · **U** = ungeeignet
    - Tageslimits schützen deine Accounts. Nachfass-Mails werden automatisch fällig (nur E-Mail, höchstens eine).
 4. **Antworten erfassen** – beim Creator „Geantwortet“ klicken: interessiert, Fragen oder kein Interesse. Wer „Nein“ sagt: **„Abmelden“** – dann wird der Eintrag gelöscht und die Person nie wieder vorgeschlagen.
-5. **Discord** – Interessierte bekommen ihren persönlichen Einladungslink. Tritt jemand darüber bei, sieht das Tool es automatisch. Danach bewirbt sich der Creator im Kanal **#creator-bewerbung** und du nimmst ihn mit einem Klick an.
+5. **Discord** – Interessierte kommen über deinen Discord-Link und bewerben sich über das Formular in **#creator-bewerbung**. Du gibst ihnen die Rolle „Creator“ und setzt im Tool den Status auf „Dabei“. (Mit Bot geht das automatisch.)
 
 Fertige Antworten auf typische Fragen: **[docs/ANTWORT-BAUSTEINE.md](docs/ANTWORT-BAUSTEINE.md)**
 
@@ -72,7 +74,9 @@ Hintergrund: In Deutschland sind ungefragte Werbe-Nachrichten ohne Einwilligung 
 
 ---
 
-## Discord-Befehle
+## Discord-Befehle (nur mit Bot – optional)
+
+Ohne Bot brauchst du keine Befehle. So geht es mit Bordmitteln: [docs/DISCORD-OHNE-BOT.md](docs/DISCORD-OHNE-BOT.md).
 
 | Befehl | Wer | Wofür |
 |---|---|---|
@@ -113,7 +117,7 @@ Mehr dazu im [Plan](docs/PLAN.md) und im [Creator-Programm](docs/CREATOR-PROGRAM
   - Nie kontaktierte Creator werden nach 30 Tagen gelöscht.
   - Wer nie antwortet, wird nach 6 Monaten gelöscht.
 - **Abmeldung:** Der Eintrag wird gelöscht. Es bleibt nur ein Prüfwert (Hash), damit die Person nicht erneut angeschrieben wird.
-- Die erste Nachricht muss einen Link zu deiner Datenschutzerklärung enthalten. Vorlage: [docs/DATENSCHUTZ-VORLAGE.md](docs/DATENSCHUTZ-VORLAGE.md).
+- Die erste Nachricht muss sagen, woher du den Kontakt hast und wie man widerspricht. Das steht in jeder Vorlage. **Empfohlen:** zusätzlich ein Link zu deinem Datenschutz-Text, z. B. als Google-Doc (Vorlage: [docs/DATENSCHUTZ-VORLAGE.md](docs/DATENSCHUTZ-VORLAGE.md)). Ohne Link setzt das Tool automatisch einen kurzen Datenschutz-Hinweis in die Nachricht.
 - **Kontaktlisten nie verkaufen oder weitergeben.** Für Kampagnen anderer Spiele nur Creator fragen, die ausdrücklich zugestimmt haben.
 
 ---
@@ -124,10 +128,10 @@ Mehr dazu im [Plan](docs/PLAN.md) und im [Creator-Programm](docs/CREATOR-PROGRAM
 |---|---|
 | „Node.js ist zu alt“ | Aktuelle LTS-Version von nodejs.org installieren, Fenster schließen, neu starten. |
 | „Port 3000 ist belegt“ | Läuft das Tool schon? Dann einfach http://localhost:3000 öffnen. Sonst in `.env` `PORT=3001` eintragen. |
-| Bot bleibt offline: „Server Members Intent“ | Developer Portal → deine Anwendung → Bot → „Server Members Intent“ einschalten → speichern. |
-| Bot offline: „Token ungültig“ | Developer Portal → Bot → „Reset Token“, neuen Token im Dashboard eintragen. |
-| Slash-Befehle fehlen in Discord | Bot ist auf dem Server? Discord neu laden (`Strg + R`). Bei mehreren Servern die Server-ID in den Einstellungen setzen. |
-| Bot kann keine Rollen vergeben | Server-Einstellungen → Rollen: die Bot-Rolle **über** „Creator“, „Founding Creator“ und „Tester“ ziehen. |
+| (Bot) bleibt offline: „Server Members Intent“ | Developer Portal → deine Anwendung → Bot → „Server Members Intent“ einschalten → speichern. |
+| (Bot) offline: „Token ungültig“ | Developer Portal → Bot → „Reset Token“, neuen Token im Dashboard eintragen. |
+| (Bot) Slash-Befehle fehlen in Discord | Bot ist auf dem Server? Discord neu laden (`Strg + R`). Bei mehreren Servern die Server-ID in den Einstellungen setzen. |
+| (Bot) kann keine Rollen vergeben | Server-Einstellungen → Rollen: die Bot-Rolle **über** „Creator“, „Founding Creator“ und „Tester“ ziehen. |
 | YouTube-Suche stoppt | Tageskontingent verbraucht (100 Suchen). Es setzt sich gegen 9 Uhr deutscher Zeit zurück (Mitternacht an der US-Westküste). |
 | Twitch-Suche meldet Fehler | Client-ID und Secret prüfen. Bei der Twitch-App muss der Client-Typ „Vertraulich“ sein. |
 | E-Mail öffnet sich nicht richtig | In den Einstellungen das E-Mail-Programm wählen (Gmail, Outlook oder Standard-Programm). |
@@ -151,7 +155,8 @@ Die Datenbank wird beim Start automatisch auf den neuen Stand gebracht.
 
 - [docs/EINRICHTUNG.md](docs/EINRICHTUNG.md) – alle Zugänge Schritt für Schritt
 - [docs/PLAN.md](docs/PLAN.md) – der Gesamtplan bis zum Launch und danach
-- [docs/LAUNCH-PLAYBOOK.md](docs/LAUNCH-PLAYBOOK.md) – Checkliste mit Terminen bis zum 21.11.2026
+- [docs/LAUNCH-PLAYBOOK.md](docs/LAUNCH-PLAYBOOK.md) – Tag für Tag: Playtests 24./25.10., Launch Hour Sa 31.10.2026, Samstags-Events bis 28.11.
+- [docs/DISCORD-OHNE-BOT.md](docs/DISCORD-OHNE-BOT.md) – Discord mit Bordmitteln + Texte zum Kopieren
 - [docs/CREATOR-PROGRAMM.md](docs/CREATOR-PROGRAMM.md) – das Programm zum Weitergeben (DE/EN)
 - [docs/CREATOR-KIT.md](docs/CREATOR-KIT.md) – Titel, Beschreibungen und Ablauf für Creator
 - [docs/ANTWORT-BAUSTEINE.md](docs/ANTWORT-BAUSTEINE.md) – Antworten auf typische Fragen

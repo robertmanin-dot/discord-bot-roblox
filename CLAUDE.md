@@ -5,7 +5,10 @@
 **Creator Launch Kit** für den Launch eines Roblox-Spiels (Team-Shooter mit Turmbau-Rennen):
 
 - **Creator Radar** (Dashboard unter http://localhost:3000): findet kleine Roblox-Creator (YouTube- und Twitch-API, TikTok/Instagram per Lesezeichen oder Import), bewertet sie, bereitet Nachrichten vor und verfolgt die Antworten. **Gesendet wird immer von Hand durch den Nutzer.**
-- **Creator HQ** (Discord-Bot): `/setup`, Creator-Bewerbungen, persönliche Einladungslinks, Creator-Codes, Live-Meldungen, Ranglisten, Playtests, Bug-Meldungen, Launch-/Wochen-Events mit Countdown und Live-Spielerzahl.
+- **Creator HQ** (Discord-Bot, **optional, Standard aus**): `/setup`, Creator-Bewerbungen, persönliche Einladungslinks, Creator-Codes, Live-Meldungen, Ranglisten, Playtests, Bug-Meldungen, Launch-/Wochen-Events. Nur sinnvoll, wenn ein Rechner dauerhaft läuft. Einschalten: Dashboard → Einstellungen → Discord → „Discord-Bot verwenden“ (`discord.useBot`).
+- **Discord ohne Bot** (der Normalfall): Onboarding, Events, Forum-Kanal und Google-Formulare – Anleitung und Texte in [docs/DISCORD-OHNE-BOT.md](docs/DISCORD-OHNE-BOT.md).
+
+Das Tool muss **nicht dauernd laufen**. Der Nutzer startet es nur, wenn er Creator sucht oder anschreibt.
 
 Der Nutzer spricht Deutsch. Antworte auf Deutsch, kurz und ohne Fachjargon.
 
@@ -15,7 +18,7 @@ Das Roblox-Spiel selbst ist **nicht** Teil dieses Repos. Ändere am Spiel nichts
 
 ```bash
 npm install          # Pakete installieren (discord.js, express, eld)
-npm start            # Dashboard + Bot starten (http://localhost:3000)
+npm start            # Dashboard starten (http://localhost:3000); Bot nur, wenn eingeschaltet
 npm test             # alle Tests (node:test)
 npm run check        # Checkliste: was ist noch nicht eingerichtet?
 npm run discover:youtube   # YouTube-Suche einmal laufen lassen
@@ -40,7 +43,7 @@ Einstellungen per API ändern (das Tool muss laufen; ändernde Anfragen brauchen
 
 ```bash
 curl -X PUT http://localhost:3000/api/settings -H "X-CLK: 1" -H "Content-Type: application/json" \
-  -d '{"game":{"name":"Tower Rush","pitch_de":"…","pitch_en":"…","launchDate":"21.11.2026","launchTime":"19:00","senderName":"Robert","studioName":"…","privacyUrl":"https://…"}}'
+  -d '{"game":{"name":"Tower Rush","pitch_de":"…","pitch_en":"…","launchDate":"31.10.2026","launchTime":"19:00","senderName":"Robert","studioName":"…","privacyUrl":"https://…"}}'
 curl http://localhost:3000/api/status    # Checkliste, Bot-Status, Kontingent
 ```
 
@@ -48,15 +51,15 @@ curl http://localhost:3000/api/status    # Checkliste, Bot-Status, Kontingent
 
 Führe den Nutzer durch [docs/EINRICHTUNG.md](docs/EINRICHTUNG.md) und frag nach diesen Werten:
 
-1. **Spiel:** Name, 1–2 Sätze Beschreibung auf Deutsch und Englisch, Roblox-Spiel-Link, Launch-Datum und -Uhrzeit (Standard: Sa 21.11.2026, 19:00 MEZ).
+1. **Spiel:** Name, 1–2 Sätze Beschreibung auf Deutsch und Englisch, Roblox-Spiel-Link, Launch-Datum und -Uhrzeit (nach Absprache, Vorschlag: Sa 31.10.2026, 19:00 MEZ; Playtests Sa 24.10. und So 25.10.; danach Samstags-Events). Zeitplan: [docs/LAUNCH-PLAYBOOK.md](docs/LAUNCH-PLAYBOOK.md).
 2. **Absender:** Name, Studio-Name, Studio-E-Mail.
-3. **Links:** Infoseite für Creator, Datenschutzerklärung, Impressum, allgemeiner Discord-Einladungslink.
+3. **Links:** allgemeiner Discord-Einladungslink (steht in den Nachrichten). Datenschutzerklärung **empfohlen** – ein Google-Doc mit „Jeder mit dem Link kann ansehen“ reicht; ohne Link setzt das Tool einen kurzen Datenschutz-Hinweis in die Nachricht. Infoseite und Impressum **optional** (ohne Infoseite verlinken die Nachrichten das Roblox-Spiel).
 4. **Belohnung für den Creator-Code** (was Zuschauer bekommen; muss ein Ingame-Item ohne Echtgeldwert sein, das man nicht kaufen kann).
-5. **Zugangsdaten:** Discord-Bot-Token, YouTube-API-Schlüssel, optional Twitch Client-ID + Secret.
+5. **Zugangsdaten:** YouTube-API-Schlüssel, optional Twitch Client-ID + Secret. Discord-Bot-Token nur, wenn der Bot genutzt wird.
 
 **Zugangsdaten nie im Chat erfragen.** Bitte den Nutzer, sie selbst im Dashboard unter „Einrichtung“ oder in `.env` einzutragen. Gibt der Nutzer trotzdem einen Schlüssel im Chat an: nur in `.env` schreiben, nie wiederholen, nie loggen, nie committen.
 
-Danach: Bot einladen (Button im Dashboard), im Discord `/setup` ausführen, Roblox-Spiel im Dashboard verknüpfen, `npm run check` zur Kontrolle.
+Danach: Discord mit Bordmitteln einrichten ([docs/DISCORD-OHNE-BOT.md](docs/DISCORD-OHNE-BOT.md)), Roblox-Spiel im Dashboard verknüpfen, `npm run check` zur Kontrolle. Nur mit Bot: Bot einladen (Button im Dashboard) und im Discord `/setup` ausführen.
 
 ## Architektur in Kürze
 

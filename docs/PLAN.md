@@ -1,13 +1,13 @@
 # Plan: Creator-Launch für dein Roblox-Spiel
 
-Stand: 22.10.2026 · Ziel-Launch: **Samstag, 21.11.2026, 19:00 Uhr MEZ** (13:00 New York, 10:00 Los Angeles)
+Stand: 23.10.2026 · Playtests: **Sa 24.10. und So 25.10.** · Launch (Vorschlag): **Samstag, 31.10.2026, 19:00 Uhr MEZ** (14:00 New York, 11:00 Los Angeles) · danach jeden Samstag ein Creator-Event
 
 ## Kurzfassung
 
 - Du baust ein Team aus kleinen Roblox-Creatorn („Founding Creator“). Sie spielen dein Spiel vor allen anderen und gehen beim Launch gleichzeitig live.
 - Jeder Creator bekommt einen eigenen Code und einen eigenen Roblox-Share-Link. So siehst du, wer wie viele Spieler bringt.
 - Das **Creator Radar** findet die Creator (YouTube und Twitch automatisch, TikTok/Instagram per Klick). Es bereitet die Nachrichten vor und verfolgt die Antworten. **Senden tust du selbst.**
-- Der Discord-Bot **Creator HQ** erledigt Bewerbungen, Einladungslinks, Playtests, Bug-Meldungen, Countdown, Live-Meldungen und Ranglisten.
+- **Discord ohne Bot:** Du lässt keinen Rechner dauernd laufen. Deshalb nutzt du Discords Bordmittel (Onboarding, Events, Forum) und zwei Google-Formulare – Anleitung und Texte: [DISCORD-OHNE-BOT.md](DISCORD-OHNE-BOT.md). Der Bot **Creator HQ** ist im Projekt enthalten, aber optional und standardmäßig aus.
 - Nach dem eigenen Launch kann daraus ein Angebot für andere Roblox-Entwickler werden: koordinierte Launch-Kampagnen.
 
 ---
@@ -66,7 +66,7 @@ Das ist keine Rechtsberatung. Vor dem Agentur-Schritt einmal mit Anwalt oder IHK
 2. **Anreichern.** Erfasst werden Follower, Aktivität, Roblox-Anteil, gespielte Spiele und die Sprache (Plattform-Angabe und Text-Erkennung). Dazu Kontaktwege aus der Beschreibung und das letzte Video. Daraus entsteht eine **Bewertung von 0 bis 100**.
 3. **Nachricht vorbereiten.** Vorlage je Sprache und Kanal (7 Sprachen). Name, letztes Video, Spiel, Termin und persönlicher Link werden automatisch eingesetzt.
 4. **Senden-Modus.** Enter kopiert den Text und öffnet Profil oder E-Mail-Entwurf. S = gesendet. Etwa 30–45 Sekunden pro Creator. Tageslimits schützen deine Accounts.
-5. **Verfolgen.** Status: Neu → Kontaktiert → Geantwortet → Interessiert → Im Discord → Dabei → Live. Tritt jemand über seinen persönlichen Discord-Link bei, setzt der Bot den Status selbst. Die Statistik zeigt Antwortquoten je Sprache, Kanal und Vorlage (A/B-Test).
+5. **Verfolgen.** Status: Neu → Kontaktiert → Geantwortet → Interessiert → Im Discord → Dabei → Live. Ohne Bot setzt du „Im Discord“ und „Dabei“ von Hand. Die Statistik zeigt Antwortquoten je Sprache, Kanal und Vorlage (A/B-Test).
 
 | Plattform | Finden | Kontakt | Automatisch? |
 |---|---|---|---|
@@ -82,14 +82,14 @@ Das ist keine Rechtsberatung. Vor dem Agentur-Schritt einmal mit Anwalt oder IHK
 3. BedWars- und Bau-und-Kampf-Creator
 4. Streamer, die mit ihren Zuschauern spielen
 
-**In Wellen:** 50 (zwei Vorlagen im Vergleich) → 150 → 300.
+**In Wellen:** jeden Tag bis zum Limit (ca. 40 E-Mails), Vorlagen A und B im Wechsel. Nach 3 Tagen in der Statistik schauen, welche besser ankommt.
 
-**Erwartung:** Kalt angeschrieben antworten im Schnitt nur wenige Prozent, persönlich angeschrieben deutlich mehr. Faustregel: 5–10 % sagen zu. Bei 500 Anfragen sind das etwa 25–50 Creator.
+**Erwartung:** Kalt angeschrieben antworten im Schnitt nur wenige Prozent, persönlich angeschrieben deutlich mehr. Faustregel: 5–10 % sagen zu. In der Woche bis zum Launch schaffst du etwa 200–300 Anfragen, also **10–25 Creator** zur Launch Hour. Mit jedem Samstags-Event kommen neue dazu.
 
 **Vorher (Vertrauen bringt Antworten):**
 - Studio-Name und Studio-Mail (SPF/DKIM)
 - ein TikTok- oder YouTube-Kanal zum Spiel mit 3–5 Clips
-- eine Infoseite „Founding Creator“ mit Impressum und Datenschutz
+- Datenschutz-Text als Google-Doc (empfohlen; ohne Link setzt das Tool einen kurzen Hinweis in die Nachricht). Eine Infoseite ist optional – ohne sie verlinken die Nachrichten dein Roblox-Spiel.
 
 ---
 
@@ -121,9 +121,9 @@ Details zum Weitergeben: [CREATOR-PROGRAMM.md](CREATOR-PROGRAMM.md).
 
 - Seit Juni 2026 bewertet Roblox Empfehlungen über **28 Tage**: Spielzeit, Wiederkommen, Ausgaben und Absprünge in der ersten Runde.
 - Viele Spieler auf einmal bringen Hype und einen Platz in den Ranglisten. Wer nach drei Minuten wieder geht, schadet aber.
-- **Launch Hour plus feste Events jeden Samstag um 19 Uhr:** 28.11., 5.12., 12.12. und 19.12. Jeweils mit Live-Event im Spiel. So sind auch Grow a Garden und Steal a Brainrot mit ihren wöchentlichen Admin-Events gewachsen.
+- **Launch Hour am Sa 31.10. plus feste Events jeden Samstag um 19 Uhr:** 7.11., 14.11., 21.11. und 28.11. Jeweils mit Live-Event im Spiel. So sind auch Grow a Garden und Steal a Brainrot mit ihren wöchentlichen Admin-Events gewachsen.
 - **Die ersten 5 Minuten im Spiel müssen sitzen:** schnell drin, sofort Action.
-- Die Woche nach dem Launch ist in den USA Thanksgiving (26.11.) – viel Roblox-Verkehr. Die 28 Tage enden direkt vor den Weihnachtsferien.
+- Die 28 Tage nach dem Launch enden am 28.11. Am 26.11. ist in den USA Thanksgiving – viel Roblox-Verkehr. Der Launch fällt auf Halloween: mehr Konkurrenz durch Events großer Spiele, aber auch viele Spieler online.
 
 Ablauf mit Daten: [LAUNCH-PLAYBOOK.md](LAUNCH-PLAYBOOK.md).
 
@@ -133,21 +133,26 @@ Ablauf mit Daten: [LAUNCH-PLAYBOOK.md](LAUNCH-PLAYBOOK.md).
 
 - Tester ab 16 zählen für die Select-Freischaltung. Jüngere nur mit Einverständnis der Eltern.
 - Belohnung: exklusives Tester-Item oder Titel, Name in den Credits, Discord-Rolle, früher Zugang. **Keine Robux- oder Geldpreise** für „die Besten“.
-- Der Bot regelt Anmeldung, Warteliste, Erinnerungen, den Link per DM, Feedback-Formular, Bug-Meldungen und Punkte.
-- Ein eigener **Creator-Playtest** etwa 10 Tage vor dem Launch liefert Teaser-Material.
+- **Ohne Bot:** Discord-Event pro Termin (wer „Interessiert“ klickt, wird von Discord erinnert), privater Server-Link erst zum Start im Tester-Kanal, danach Google-Feedback-Formular, Bugs im Forum-Kanal.
+- Noch nicht für unter 16 freigeschaltet? Dann können nur Tester ab 16 joinen.
+- Eine **Creator-Vorab-Session** am Do 29.10. liefert Material für Teaser.
 
 ---
 
 ## 7. Zeitplan
 
-| Wann | Tool & Inhalte | Du |
-|---|---|---|
-| bis So 25.10. | Creator Radar, Nachrichten, Bot | Spiel fertig · Select-Stand + Verifizierung · Zugangsdaten · Studio-Mail · Clips posten · Infoseite/Datenschutz |
-| 26.10.–1.11. | Twitch-Suche läuft mit | Playtests (16+) · Welle 1 (50) + Welle 2 (150) |
-| 2.–8.11. | – | Welle 3 (300) · Antworten · Creator aufnehmen |
-| 9.–20.11. | – | Creator-Playtest · Share Links anlegen · Creator-Kit · Generalprobe |
-| **Sa 21.11., 19:00** | Countdown, Live-Feed, Spielerzahl | **Launch Hour** |
-| 28.11.–19.12. | wöchentliche Events | Samstags-Events, Auswertung |
+| Wann | Was |
+|---|---|
+| **Fr 23.10.** | Select-Stand prüfen + Verifizierung · Discord mit Bordmitteln einrichten · Formulare · Playtest-Events · Tool + YouTube-Schlüssel |
+| **Sa 24.10., 18:00** | Playtest #1 (ab 16, solange nicht freigeschaltet) · YouTube-Suche · Welle 1 |
+| **So 25.10., 16:00** | Playtest #2 · Welle 1 weiter |
+| Mo 26.10.–Mi 28.10. | Bugs fixen · täglich eine Welle (ca. 40 Mails + erlaubte DMs) · Nachfassen nach 3 Tagen · Creator aufnehmen, Codes + Share Links · Creator-Kit · Launch-Event anlegen |
+| Do 29.10., 19:00 | Creator-Vorab-Session → Teaser |
+| Fr 30.10. | Generalprobe · Erinnerung an alle Creator |
+| **Sa 31.10., 19:00** | **Launch Hour** (14:00 New York) |
+| 7.11.–28.11., samstags 19:00 | Creator-Events, Outreach läuft weiter (13:00 New York) |
+
+Tag für Tag: [LAUNCH-PLAYBOOK.md](LAUNCH-PLAYBOOK.md).
 
 ---
 

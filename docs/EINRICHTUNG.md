@@ -1,6 +1,8 @@
 # Einrichtung – Schritt für Schritt
 
-Plane etwa 30–45 Minuten ein. Die Startseite im Dashboard zeigt dir jederzeit, was noch fehlt.
+Plane etwa 30 Minuten für das Tool ein, dazu etwa 1 Stunde für Discord. Die Startseite im Dashboard zeigt dir jederzeit, was noch fehlt.
+
+**Der Discord-Bot ist optional und standardmäßig aus.** Er wäre nur nötig, wenn ein Rechner dauerhaft läuft. Ohne Bot richtest du Discord mit Bordmitteln ein: [DISCORD-OHNE-BOT.md](DISCORD-OHNE-BOT.md). Abschnitt 4 und 10 kannst du dann überspringen.
 Im Terminal geht das auch mit `npm run check`.
 
 **Wichtig:** Zugangsdaten (Tokens, Schlüssel, Secrets) trägst du **nur** im Dashboard unter „Einrichtung“
@@ -33,7 +35,7 @@ git checkout claude/exciting-babbage-m1e4hy   # nur nötig, solange nicht in mai
 - Linux: `./start.sh`
 
 Beim ersten Start werden die Pakete installiert (1–2 Minuten). Danach öffnet sich **http://localhost:3000**.
-Das Fenster offen lassen – schließt du es, sind Dashboard und Bot aus.
+Das Tool läuft, solange das Fenster offen ist. Kein Dauerbetrieb nötig: Starte es, wenn du Creator suchst oder anschreibst.
 
 ## 3. Spiel-Infos eintragen
 
@@ -44,18 +46,21 @@ Dashboard → **Einstellungen**:
 | Spielname | Tower Rush |
 | Kurzbeschreibung (DE) | Ein Team-Shooter, bei dem ihr um die Blöcke in der Mitte kämpft. Wer zuerst seinen Turm fertig hat, gewinnt. |
 | Kurzbeschreibung (EN) | A team shooter where you fight over the blocks in the middle. First team to finish their tower wins. |
-| Launch-Termin | 21.11.2026, 19:00 (Zeitzone Europe/Berlin) |
+| Launch-Termin | 31.10.2026, 19:00 (Zeitzone Europe/Berlin) |
 | Absendername / Studio | Robert / Name deines Studios |
 | Studio-E-Mail | creators@deine-domain.de |
-| Infoseite für Creator | Link zu deiner Seite „Founding Creator“ |
-| Datenschutzerklärung | Link (Vorlage: [DATENSCHUTZ-VORLAGE.md](DATENSCHUTZ-VORLAGE.md)) |
-| Impressum | Link |
-| Allgemeiner Discord-Link | dauerhafter Einladungslink zu deinem Server (Fallback, wenn der Bot aus ist) |
+| Infoseite für Creator | optional – ohne sie verlinken die Nachrichten dein Roblox-Spiel |
+| Datenschutzerklärung | empfohlen – Google-Doc reicht (siehe Abschnitt 9). Ohne Link steht ein kurzer Hinweis in jeder Nachricht. |
+| Impressum | optional (spätestens nötig, wenn du eine eigene Webseite hast) |
+| Allgemeiner Discord-Link | dauerhafter Einladungslink zu deinem Server – steht in den Nachrichten (Einladung → „Läuft nie ab“) |
 | Belohnung für den Code | z. B. „einen exklusiven Founding-Skin, den man nicht kaufen kann“ |
 
 Die Belohnung für den Creator-Code muss ein Ingame-Item **ohne Echtgeldwert** sein. Man darf es nirgends für Robux kaufen können. So verlangen es die Roblox-Regeln für Promo-Codes.
 
-## 4. Discord-Bot erstellen
+## 4. Discord-Bot erstellen (optional)
+
+Nur nötig, wenn ein Rechner dauerhaft läuft – Standard: aus. Einschalten unter Einstellungen → Discord → „Discord-Bot verwenden“.
+Ohne Bot: [DISCORD-OHNE-BOT.md](DISCORD-OHNE-BOT.md).
 
 1. [discord.com/developers/applications](https://discord.com/developers/applications) öffnen → **New Application** → Name eingeben (z. B. „Tower Rush HQ“) → **Create**.
 2. Links **Bot** wählen.
@@ -111,7 +116,7 @@ Twitch-Flüstern (Whispers) nutzt das Tool absichtlich nicht.
 ## 7. Roblox
 
 1. **Spiel verknüpfen:** Dashboard → Einstellungen → Spiel-Link einfügen (`https://www.roblox.com/games/123…`) → **Verknüpfen**.
-   Das Tool holt sich die Universe-ID. Damit zeigt der Bot beim Launch die Live-Spielerzahl.
+   Das Tool holt sich die Universe-ID. Mit Bot zeigt er beim Launch die Live-Spielerzahl. Ohne Bot liest du sie auf der Roblox-Spielseite ab.
 2. **Freischaltung für Spieler unter 16 prüfen (sehr wichtig):**
    - Seit Juni 2026 gibt es eigene Konten für 5–8 (Roblox Kids) und 9–15 Jahre (Roblox Select). Neue Spiele sehen zuerst nur altersgeprüfte Spieler ab 16.
    - Im **Creator Hub** (create.roblox.com) bei deinem Spiel den Stand der **Select-Freischaltung** („Select Eligibility“) ansehen.
@@ -124,11 +129,11 @@ Twitch-Flüstern (Whispers) nutzt das Tool absichtlich nicht.
    - Playtests mit Testern ab 16 und die Launch Hour helfen dabei. Bis zur Freischaltung lieber Creator mit älterem Publikum ansprechen.
 3. **Share Links pro Creator:**
    - Im Creator Hub bei deinem Spiel unter **Share Links** für jeden angenommenen Creator einen eigenen Link anlegen. Gib ihm den Creator-Namen.
-   - Link kopieren und eintragen: im Dashboard beim Creator (Feld „Share Link“) oder in Discord mit `/creator link`.
+   - Link kopieren und im Dashboard beim Creator eintragen (Feld „Share Link“). Dann dem Creator schicken. (Mit Bot geht auch `/creator link`.)
    - Roblox zeigt dir pro Link, wie viele neue Spieler darüber kommen. Bringt ein Creator neue oder lange inaktive Roblox-Spieler, kann dein Spiel zusätzlich über „Creator Rewards“ verdienen.
 4. **Discord-Link auf der Spielseite:** Im Creator Hub bei den Social Links deinen Discord eintragen.
    Roblox zeigt ihn nur altersgeprüften Spielern ab 16. Im Spiel selbst sind Links zu Discord nicht erlaubt.
-5. **Creator-Codes im Spiel:** Hat dein Spiel schon ein Code-System, trag dort die Codes der Creator ein. Der Bot zeigt jedem seinen Code mit `/creator code`.
+5. **Creator-Codes im Spiel:** Hat dein Spiel schon ein Code-System, trag dort die Codes der Creator ein. Trag den Code auch im Dashboard beim Creator ein und schick ihn dem Creator. (Mit Bot sieht jeder seinen Code mit `/creator code`.)
    Die Belohnung ist für alle gleich, öffentlich beschrieben und nicht kaufbar.
 
 ## 8. E-Mail-Absender vorbereiten
@@ -139,14 +144,23 @@ Twitch-Flüstern (Whispers) nutzt das Tool absichtlich nicht.
 - Bleib unter etwa 40–50 Mails pro Tag. Das Tool hat dafür ein Tageslimit.
 - Lege vorher 3–5 Gameplay-Clips auf einen TikTok- oder YouTube-Kanal zum Spiel. Creator schauen nach, wer schreibt.
 
-## 9. Datenschutz & Impressum
+## 9. Datenschutz-Text (empfohlen, 5 Minuten, ohne Webseite)
 
-1. Mit [DATENSCHUTZ-VORLAGE.md](DATENSCHUTZ-VORLAGE.md) eine Datenschutzerklärung erstellen. Am besten einmal prüfen lassen.
-2. Sie auf einer einfachen Webseite veröffentlichen, zusammen mit einem Impressum und der Infoseite für Creator.
-3. Die Links in den Einstellungen eintragen und in der Discord-Serverbeschreibung verlinken.
-4. Für Tester unter 16: [ELTERN-EINVERSTAENDNIS.md](ELTERN-EINVERSTAENDNIS.md). Für Playtests: [TEILNAHMEBEDINGUNGEN-PLAYTEST.md](TEILNAHMEBEDINGUNGEN-PLAYTEST.md).
+Wer Creator anschreibt, muss sagen, woher er den Kontakt hat und wie man widerspricht. Das steht schon in jeder Vorlage.
+Ein vollständiger Datenschutz-Text ist trotzdem empfohlen. Dafür brauchst du **keine Webseite**:
 
-## 10. Rund um die Uhr betreiben (optional)
+1. Text aus [DATENSCHUTZ-VORLAGE.md](DATENSCHUTZ-VORLAGE.md) in ein **Google-Doc** kopieren und die Platzhalter ausfüllen. Am besten einmal prüfen lassen.
+2. **Teilen** → „Allgemeiner Zugriff“ → **„Jeder mit dem Link“** → Rolle **„Betrachter“** → Link kopieren.
+3. Dashboard → Einstellungen → **Datenschutzerklärung** → Link einfügen.
+
+Ohne Link setzt das Tool automatisch einen kurzen Datenschutz-Hinweis in jede Nachricht.
+Ein **Impressum** brauchst du spätestens, wenn du eine eigene Webseite hast. Bis dahin kannst du deine Kontaktdaten mit in das Google-Doc schreiben.
+
+Für Tester und Creator unter 16: [ELTERN-EINVERSTAENDNIS.md](ELTERN-EINVERSTAENDNIS.md). Für Playtests: [TEILNAHMEBEDINGUNGEN-PLAYTEST.md](TEILNAHMEBEDINGUNGEN-PLAYTEST.md).
+
+## 10. Rund um die Uhr betreiben (optional – nur für den Bot)
+
+Nur wichtig, wenn du den Discord-Bot nutzen willst. Das Outreach-Tool braucht keinen Dauerbetrieb.
 
 Der Bot ist nur online, solange das Tool läuft. Ist er offline, funktionieren die Buttons nicht. Beitritte über Einladungslinks werden dann nicht erkannt.
 
@@ -182,4 +196,4 @@ Der Bot ist nur online, solange das Tool läuft. Ist er offline, funktionieren d
 
 ---
 
-Alles erledigt? `npm run check` zeigt überall ✅. Dann kann es mit der ersten Welle losgehen – siehe [LAUNCH-PLAYBOOK.md](LAUNCH-PLAYBOOK.md).
+Alles erledigt? `npm run check` zeigt alle Pflichtpunkte als ✅. Dann kann es mit der ersten Welle losgehen – siehe [LAUNCH-PLAYBOOK.md](LAUNCH-PLAYBOOK.md).
