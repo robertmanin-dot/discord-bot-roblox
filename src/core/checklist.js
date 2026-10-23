@@ -8,6 +8,7 @@ export function setupChecklist() {
   const sec = secretStatus();
   const bot = services.bot.status();
   const game = s.game || {};
+  const useBot = Boolean(s.discord?.useBot);
   return [
     {
       key: 'game',
@@ -16,7 +17,13 @@ export function setupChecklist() {
       where: 'einstellungen',
     },
     { key: 'sender', label: 'Absendername und Studio-Name eintragen', done: Boolean(game.senderName), where: 'einstellungen' },
-    { key: 'privacy', label: 'Link zur Datenschutzerklärung eintragen (Pflicht in der ersten Nachricht)', done: Boolean(game.privacyUrl), where: 'einstellungen' },
+    {
+      key: 'privacy',
+      label: 'Link zur Datenschutzerklärung eintragen (empfohlen – ohne Link steht ein kurzer Hinweis in jeder Nachricht)',
+      done: Boolean(game.privacyUrl),
+      optional: true,
+      where: 'einstellungen',
+    },
     { key: 'infoUrl', label: 'Infoseite für Creator verlinken', done: Boolean(game.infoUrl), optional: true, where: 'einstellungen' },
     { key: 'youtube', label: 'YouTube-API-Schlüssel hinterlegen', done: sec.YOUTUBE_API_KEY.set, where: 'einrichtung' },
     {
@@ -26,15 +33,19 @@ export function setupChecklist() {
       optional: true,
       where: 'einrichtung',
     },
-    { key: 'discordToken', label: 'Discord-Bot-Token hinterlegen', done: sec.DISCORD_TOKEN.set, where: 'einrichtung' },
-    { key: 'botOnline', label: 'Discord-Bot ist online', done: bot.state === 'ready', where: 'einrichtung', detail: bot.error || null },
-    { key: 'botGuild', label: 'Bot auf deinen Discord-Server einladen', done: Boolean(bot.guild), where: 'einrichtung' },
-    {
-      key: 'setup',
-      label: 'Im Discord einmal /setup ausführen (legt Rollen und Kanäle an)',
-      done: Boolean(s.discord?.channels?.apply && s.discord?.roles?.creator),
-      where: 'discord',
-    },
+    ...(useBot
+      ? [
+        { key: 'discordToken', label: 'Discord-Bot-Token hinterlegen', done: sec.DISCORD_TOKEN.set, where: 'einrichtung' },
+        { key: 'botOnline', label: 'Discord-Bot ist online', done: bot.state === 'ready', where: 'einrichtung', detail: bot.error || null },
+        { key: 'botGuild', label: 'Bot auf deinen Discord-Server einladen', done: Boolean(bot.guild), where: 'einrichtung' },
+        {
+          key: 'setup',
+          label: 'Im Discord einmal /setup ausführen (legt Rollen und Kanäle an)',
+          done: Boolean(s.discord?.channels?.apply && s.discord?.roles?.creator),
+          where: 'discord',
+        },
+      ]
+      : []),
     { key: 'universe', label: 'Roblox-Spiel verknüpfen (Live-Spielerzahl beim Launch)', done: Boolean(game.universeId), optional: true, where: 'einstellungen' },
   ];
 }

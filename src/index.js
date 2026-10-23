@@ -6,6 +6,7 @@ import { bus } from './core/bus.js';
 import { createLogger } from './core/log.js';
 import { stopAll } from './core/scheduler.js';
 import { setupChecklist } from './core/checklist.js';
+import { getSettings } from './core/settings.js';
 import { createApp } from './web/server.js';
 import { initRadar, registerRadarJobs } from './radar/index.js';
 import { createBot } from './bot/index.js';
@@ -49,10 +50,26 @@ async function main() {
 
   registerRadarJobs();
 
+  // The Discord bot is optional (settings → Discord → "Discord-Bot verwenden").
   const bot = createBot();
-  bot.start().catch((err) => log.error('Bot-Start fehlgeschlagen:', err));
+  const botWanted = () => Boolean(getSettings().discord?.useBot);
+  let botActive = botWanted();
+  if (botActive) bot.start().catch((err) => log.error('Bot-Start fehlgeschlagen:', err));
+  else log.info('Discord-Bot ist ausgeschaltet (Einstellungen → Discord). Das Outreach-Tool läuft ohne ihn.');
+  bus.on('settings.changed', (settings) => {
+    const wanted = Boolean(settings.discord?.useBot);
+    if (wanted === botActive) return;
+    botActive = wanted;
+    if (wanted) {
+      log.info('Discord-Bot eingeschaltet – verbinde …');
+      bot.start().catch((err) => log.error('Bot-Start fehlgeschlagen:', err));
+    } else {
+      log.info('Discord-Bot ausgeschaltet.');
+      bot.stop().then(() => { bot.state = 'disabled'; bot.error = null; }).catch((err) => log.error(err));
+    }
+  });
   bus.on('secrets.changed', (keys) => {
-    if (keys.includes('DISCORD_TOKEN')) {
+    if (keys.includes('DISCORD_TOKEN') && botActive) {
       log.info('Discord-Token geändert – Bot verbindet neu …');
       bot.restart().catch((err) => log.error(err));
     }

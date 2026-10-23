@@ -1,5 +1,6 @@
 // Einstellungen: game & campaign, radar, discord, points, retention, maintenance.
 import { get, put, post } from '../api.js';
+import { refreshStatus } from '../app.js';
 import { h, mount, loading, errorBox, toast, toastError, field, select, notice, actionButton, LANGUAGES, fmtLongDate, modal, confirmDialog, setQuery } from '../ui.js';
 
 const TIMEZONES = [
@@ -236,6 +237,9 @@ export async function render(root, { query }) {
 
   // ----------------------------------------------------------------- Discord
   function discordTab() {
+    const toggle = buildForm(settings, [
+      { path: 'discord.useBot', label: 'Discord-Bot verwenden', type: 'checkbox', help: 'Der Bot läuft nur, solange dieses Programm offen ist (z. B. während Playtests oder der Launch Hour). Ohne Bot: Discord-Events, Onboarding und Google-Formular – Anleitung in docs/DISCORD-OHNE-BOT.md.' },
+    ]);
     const form = buildForm(settings, [
       { path: 'discord.guildId', label: 'Server-ID', placeholder: 'wird automatisch gesetzt', help: 'Nur nötig, wenn der Bot auf mehreren Servern ist (Rechtsklick auf Server → „Server-ID kopieren“, Entwicklermodus nötig).' },
       { path: 'discord.foundingLimit', label: 'Plätze „Founding Creator“', type: 'number', min: 1, help: 'Die ersten X angenommenen Creator bekommen die Founding-Rolle.' },
@@ -253,7 +257,16 @@ export async function render(root, { query }) {
       h('summary', { class: 'small', style: 'cursor:pointer' }, 'Von /setup angelegte Rollen & Kanäle anzeigen'),
       h('pre', { class: 'log mt' }, JSON.stringify({ roles: settings.discord.roles, channels: settings.discord.channels }, null, 2)),
     );
-    return section('Discord-Bot', 'Rollen und Kanäle legt der Bot mit /setup selbst an.', form, () => save(form.collect()), ids);
+    return h(
+      'div',
+      { class: 'stack' },
+      section('Bot an/aus', null, toggle, async () => {
+        await save(toggle.collect());
+        refreshStatus();
+        show();
+      }),
+      settings.discord.useBot ? section('Discord-Bot', 'Rollen und Kanäle legt der Bot mit /setup selbst an.', form, () => save(form.collect()), ids) : null,
+    );
   }
 
   // ----------------------------------------------------------------- Punkte

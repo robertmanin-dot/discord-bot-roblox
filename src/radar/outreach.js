@@ -95,7 +95,7 @@ export function buildMessage(outreach, full, { mode = 'first', inviteUrl = null,
   const template = channel && channel !== 'none'
     ? pickTemplate({ step: mode === 'followup' ? 'followup' : 'first', channel, language: full.creator.language || 'en', outreachId: outreach.id, settings })
     : null;
-  const vars = buildVars(full, { language: template?.language || full.creator.language || 'en', inviteUrl, settings });
+  const vars = buildVars(full, { language: template?.language || full.creator.language || 'en', inviteUrl, settings, channel: template?.channel || channel });
   const rendered = template ? renderTemplate(template, vars) : { subject: '', body: '', missing: [] };
   const message = { subject: channel === 'email' ? rendered.subject : '', body: rendered.body };
   return {

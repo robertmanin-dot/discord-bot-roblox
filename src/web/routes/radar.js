@@ -354,12 +354,14 @@ export default function radarRoutes() {
     let subject = b.subject;
     let body = b.body;
     let language = b.language;
+    let channel = b.channel || null;
     if (b.key) {
       const t = getTemplate(b.key);
       if (!t) throw notFound('Vorlage nicht gefunden.');
       subject = subject ?? t.subject;
       body = body ?? t.body;
       language = language || t.language;
+      channel = channel || t.channel;
     }
     if (body === undefined || body === null) throw badRequest('Text fehlt.');
     let full = null;
@@ -372,7 +374,7 @@ export default function radarRoutes() {
         accounts: [{ platform: 'youtube', latest_title: 'Ich teste die BESTEN neuen Roblox Spiele!', last_active_at: new Date().toISOString(), source: 'youtube_api' }],
       };
     }
-    const vars = buildVars(full, { language: language || full.creator.language || 'en', inviteUrl: b.creatorId ? null : 'https://discord.gg/beispiel' });
+    const vars = buildVars(full, { language: language || full.creator.language || 'en', inviteUrl: b.creatorId ? null : 'https://discord.gg/beispiel', channel });
     const s = subject ? renderString(subject, vars) : { text: '', missing: [] };
     const bd = renderString(body, vars);
     res.json({ subject: s.text, body: bd.text, missing: [...new Set([...s.missing, ...bd.missing])] });

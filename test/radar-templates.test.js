@@ -71,7 +71,7 @@ test('buildVars uses the creator language and falls back sensibly', () => {
   const pt = buildVars(full, { language: 'pt', inviteUrl: 'https://discord.gg/personal' });
   assert.equal(pt.pitch, 'Shooter + tower race');
   assert.equal(pt.discord, 'https://discord.gg/personal');
-  assert.equal(pt.reward, "an exclusive item you can't buy");
+  assert.equal(pt.reward, 'an exclusive in-game item');
 });
 
 test('template selection: language fallback, discord->dm, A/B variants', () => {

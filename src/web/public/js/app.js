@@ -9,8 +9,8 @@ const PAGES = [
   { key: 'finden', label: 'Finden', ico: '🔎', module: './pages/finden.js' },
   { key: 'vorlagen', label: 'Vorlagen', ico: '📝', module: './pages/vorlagen.js' },
   { sep: true },
-  { key: 'discord', label: 'Discord', ico: '💬', module: './pages/discord.js', countKey: 'applications' },
-  { key: 'playtests', label: 'Playtests & Events', ico: '🧪', module: './pages/playtests.js' },
+  { key: 'discord', label: 'Discord', ico: '💬', module: './pages/discord.js', countKey: 'applications', bot: true },
+  { key: 'playtests', label: 'Playtests & Events', ico: '🧪', module: './pages/playtests.js', bot: true },
   { key: 'statistik', label: 'Statistik', ico: '📊', module: './pages/statistik.js' },
   { sep: true },
   { key: 'einstellungen', label: 'Einstellungen', ico: '⚙️', module: './pages/einstellungen.js' },
@@ -25,12 +25,14 @@ const pillsEl = document.getElementById('status-pills');
 
 let cleanup = null;
 let renderToken = 0;
-export const appState = { status: null, counts: {} };
+export const appState = { status: null, counts: {}, botEnabled: false };
 
 function buildNav() {
+  // Pages that need the Discord bot are hidden while the bot is switched off.
+  const visible = PAGES.filter((p) => !p.bot || appState.botEnabled);
   mount(
     nav,
-    PAGES.map((p) => {
+    visible.map((p) => {
       if (p.sep) return h('div', { class: 'nav-sep' });
       return h(
         'a',
@@ -108,6 +110,13 @@ export async function refreshStatus() {
   try {
     const status = await get('/status');
     appState.status = status;
+    const botEnabled = Boolean(status.features?.bot);
+    if (botEnabled !== appState.botEnabled) {
+      appState.botEnabled = botEnabled;
+      buildNav();
+      setActiveNav(currentRoute().parts[0] || 'start');
+      refreshCounts();
+    }
     const bot = status.bot || {};
     const botDot = bot.state === 'ready' ? 'green pulse' : bot.state === 'connecting' ? 'yellow' : bot.state === 'error' ? 'red' : 'grey';
     const botText = bot.state === 'ready' ? 'Bot online' : bot.state === 'connecting' ? 'Bot verbindet …' : bot.state === 'error' ? 'Bot-Fehler' : 'Bot aus';
@@ -115,7 +124,7 @@ export async function refreshStatus() {
     const q = status.quota || {};
     mount(
       pillsEl,
-      pill('', [h('span', { class: `dot ${botDot}` }), botText], '#/einrichtung', bot.error || ''),
+      botEnabled ? pill('', [h('span', { class: `dot ${botDot}` }), botText], '#/einrichtung', bot.error || '') : null,
       pill('pill-optional', [h('span', { class: `dot ${yt ? 'green' : 'grey'}` }), yt ? `YouTube ${q.youtubeSearches ?? 0}/${q.youtubeSearchLimit ?? 100} Suchen` : 'YouTube-Schlüssel fehlt'], yt ? '#/finden' : '#/einrichtung'),
     );
     const brand = document.getElementById('brand-game');
@@ -135,6 +144,10 @@ async function refreshCounts() {
     setCount('queue', q?.total || 0);
   } catch {
     setCount('queue', 0);
+  }
+  if (!appState.botEnabled) {
+    setCount('applications', 0);
+    return;
   }
   try {
     const d = await get('/discord/overview');

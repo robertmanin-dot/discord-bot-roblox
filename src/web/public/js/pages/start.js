@@ -88,10 +88,11 @@ export async function render(root) {
     mount(root, errorBox(err, () => render(root)));
     return;
   }
+  const botOn = Boolean(status.features?.bot);
   const [qFirst, qFollow, discord] = await Promise.all([
     tryGet('/queue', { mode: 'first', limit: 1 }),
     tryGet('/queue', { mode: 'followup', limit: 1 }),
-    tryGet('/discord/overview'),
+    botOn ? tryGet('/discord/overview') : Promise.resolve(null),
   ]);
 
   const game = status.game || {};
@@ -136,7 +137,9 @@ export async function render(root) {
     { class: 'grid grid-4' },
     taskCard('✉️', qFirst ? fmtNum(qFirst.total) : '–', 'Creator warten auf die erste Nachricht', '#/senden', 'Jetzt senden'),
     taskCard('🔁', qFollow ? fmtNum(qFollow.total) : '–', 'Nachfass-Mails sind fällig', '#/senden?mode=followup', 'Nachfassen'),
-    taskCard('📝', discord ? fmtNum(openApps) : '–', 'Bewerbungen warten auf dich', '#/discord', 'Prüfen'),
+    botOn
+      ? taskCard('📝', discord ? fmtNum(openApps) : '–', 'Bewerbungen warten auf dich', '#/discord', 'Prüfen')
+      : taskCard('💬', fmtNum((counts.byStatus?.geantwortet || 0) + (counts.byStatus?.interessiert || 0)), 'Creator haben geantwortet – dranbleiben!', '#/creator?status=geantwortet,interessiert', 'Ansehen'),
     taskCard('📬', sentToday === null ? '–' : `${fmtNum(sentToday)} / ${fmtNum(maxToday)}`, 'Heute gesendet (Tageslimit)', '#/senden', 'Zum Senden'),
   );
 
@@ -145,11 +148,23 @@ export async function render(root) {
     { class: 'grid grid-4' },
     statCard(fmtNum(counts.creators), 'Creator im Radar', '#/creator'),
     statCard(fmtNum((counts.byStatus?.kontaktiert || 0) + (counts.byStatus?.nachgefasst || 0)), 'warten auf Antwort', '#/creator?status=kontaktiert,nachgefasst'),
-    statCard(fmtNum(counts.members), 'Creator im Programm', '#/creator?member=1'),
-    statCard(fmtNum(counts.testers), 'aktive Tester', '#/playtests'),
+    botOn
+      ? statCard(fmtNum(counts.members), 'Creator im Programm', '#/creator?member=1')
+      : statCard(fmtNum(counts.byStatus?.interessiert || 0), 'interessiert', '#/creator?status=interessiert'),
+    botOn
+      ? statCard(fmtNum(counts.testers), 'aktive Tester', '#/playtests')
+      : statCard(fmtNum((counts.byStatus?.dabei || 0) + (counts.byStatus?.live || 0)), 'Creator dabei', '#/creator?status=dabei,live'),
   );
 
-  const botCard = h(
+  const botCard = !botOn
+    ? h(
+      'div',
+      { class: 'card' },
+      h('div', { class: 'card-head' }, h('h2', null, '💬 Discord')),
+      h('p', { class: 'muted' }, 'Der Discord-Bot ist aus – das Outreach-Tool läuft ohne ihn. Playtests und Launch Hour machst du mit Discord-Events und Google-Formular.'),
+      h('div', { class: 'help' }, 'Anleitung mit fertigen Texten: docs/DISCORD-OHNE-BOT.md im Programmordner.'),
+    )
+    : h(
     'div',
     { class: 'card' },
     h('div', { class: 'card-head' }, h('h2', null, '💬 Discord-Bot')),
@@ -189,7 +204,7 @@ export async function render(root) {
       checklistCard(status.setup || []),
       h('div', { class: 'grid grid-2' }, funnelCard(counts.byStatus || {}), h('div', { class: 'stack' }, botCard, quotaCard)),
       numbers,
-      notice('info', '💡', 'Tipp: Arbeite in Wellen – erst 50 Creator mit zwei Vorlagen (A/B), nach ein paar Tagen in der Statistik schauen, welche besser ankommt, dann die nächsten 150.'),
+      notice('info', '💡', 'Tipp: Arbeite in Wellen – heute 30–50 Creator anschreiben (zwei Vorlagen im A/B-Test), nach 1–2 Tagen in der Statistik schauen, welche besser ankommt, dann die nächsten. Business-Mails zuerst, sie antworten am häufigsten.'),
     ),
   );
   return () => timer && clearInterval(timer);

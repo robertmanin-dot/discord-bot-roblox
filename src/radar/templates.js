@@ -167,8 +167,50 @@ export function cleanName(name) {
   return s || String(name ?? '').trim();
 }
 
+/**
+ * Short privacy note used for {privacy} when no privacy-policy link is set (Art. 14 GDPR basics:
+ * purpose, legal basis, retention; source and opt-out are already part of every template).
+ * Long version for e-mails, short one for DMs (Instagram allows ~1000 characters).
+ */
+export const PRIVACY_NOTE = {
+  de: {
+    long: 'Ich nutze deinen Kontakt nur für diese Anfrage (berechtigtes Interesse) und lösche ihn ohne Antwort spätestens nach 6 Monaten. Mehr Infos gerne auf Nachfrage.',
+    short: 'nur für diese Anfrage, ohne Antwort Löschung nach spätestens 6 Monaten.',
+  },
+  en: {
+    long: "I only use your contact for this request (legitimate interest) and delete it within 6 months if you don't reply. More info on request.",
+    short: 'only used for this request, deleted within 6 months without a reply.',
+  },
+  es: {
+    long: 'Uso tu contacto solo para esta propuesta (interés legítimo) y lo borro como máximo en 6 meses si no respondes. Más información si la pides.',
+    short: 'solo para esta propuesta, se borra en 6 meses si no respondes.',
+  },
+  pt: {
+    long: 'Uso seu contato só para esta proposta (interesse legítimo) e apago em no máximo 6 meses se você não responder. Mais informações se quiser.',
+    short: 'só para esta proposta, apagado em até 6 meses sem resposta.',
+  },
+  fr: {
+    long: "J'utilise ton contact uniquement pour cette demande (intérêt légitime) et je le supprime au plus tard après 6 mois sans réponse. Plus d'infos sur demande.",
+    short: 'uniquement pour cette demande, supprimé après 6 mois sans réponse.',
+  },
+  pl: {
+    long: 'Używam Twojego kontaktu tylko w tej sprawie (uzasadniony interes) i usunę go najpóźniej po 6 miesiącach, jeśli nie odpowiesz. Więcej informacji na życzenie.',
+    short: 'tylko w tej sprawie, usunięty po 6 miesiącach bez odpowiedzi.',
+  },
+  tr: {
+    long: 'İletişim bilgini sadece bu teklif için kullanıyorum (meşru menfaat) ve cevap vermezsen en geç 6 ay içinde siliyorum. İstersen daha fazla bilgi veririm.',
+    short: 'sadece bu teklif için, cevapsız kalırsa 6 ay içinde silinir.',
+  },
+};
+
+export function privacyText(g, lang, channel) {
+  if (g?.privacyUrl) return g.privacyUrl;
+  const note = PRIVACY_NOTE[lang] || PRIVACY_NOTE.en;
+  return channel && channel !== 'email' ? note.short : note.long;
+}
+
 /** Placeholder values for a creator. */
-export function buildVars(full, { language, inviteUrl = null, settings = getSettings() } = {}) {
+export function buildVars(full, { language, inviteUrl = null, settings = getSettings(), channel = null } = {}) {
   const g = settings.game || {};
   const lang = language || full?.creator?.language || 'en';
   const tz = g.timezone || 'Europe/Berlin';
@@ -188,7 +230,7 @@ export function buildVars(full, { language, inviteUrl = null, settings = getSett
     discord: inviteUrl || g.discordInvite || '',
     sender: g.senderName || '',
     studio: g.studioName || '',
-    privacy: g.privacyUrl || '',
+    privacy: privacyText(g, lang, channel),
     reward: g[`codeReward_${lang}`] || g.codeReward_en || g.codeReward_de || '',
     platform: primary ? PLATFORM_LABELS[primary.platform] || primary.platform : '',
   };

@@ -72,7 +72,18 @@ export async function render(root, { refreshStatus }) {
   function draw(status) {
     const secrets = status.secrets || {};
     const bot = status.bot || {};
-    const cards = STEPS.map((step, i) => stepCard(step, i + 1, secrets, bot, status));
+    const botOn = Boolean(status.features?.bot);
+    const cards = STEPS.filter((step) => botOn || step.key !== 'discord').map((step, i) => stepCard(step, i + 1, secrets, bot, status));
+    if (!botOn) {
+      cards.push(
+        h(
+          'div',
+          { class: 'card soft' },
+          h('div', { class: 'card-head' }, h('h2', { style: 'margin:0' }, '💬 Discord-Bot (aus)'), h('span', { class: 'badge' }, 'optional')),
+          h('p', { class: 'muted' }, 'Nicht nötig: Der Bot läuft nur, solange dieses Programm offen ist. Ohne Bot nutzt du Discord-Events, Onboarding und ein Google-Formular (Anleitung: docs/DISCORD-OHNE-BOT.md). Einschalten kannst du ihn jederzeit unter Einstellungen → Discord.'),
+        ),
+      );
+    }
     const gameOk = (status.setup || []).find((s) => s.key === 'game')?.done;
     mount(
       root,

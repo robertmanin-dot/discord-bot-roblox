@@ -24,8 +24,8 @@ export const DEFAULTS = {
     studioName: '',
     contactEmail: '',         // Studio-Mail
     parentFormUrl: '',        // Link zum Eltern-Einverständnis (z. B. Online-Formular oder PDF)
-    codeReward_de: 'ein exklusives Item, das man nicht kaufen kann',
-    codeReward_en: 'an exclusive item you can\'t buy',
+    codeReward_de: 'ein exklusives Ingame-Item', // muss im Spiel unverkäuflich sein (Roblox-Regel für Codes)
+    codeReward_en: 'an exclusive in-game item',
   },
 
   radar: {
@@ -81,9 +81,9 @@ export const DEFAULTS = {
       viewers: ['with viewers', 'with fans', 'with subs', 'mit zuschauern', 'mit abonnenten', 'mit euch', 'mit abos', 'zuschauer', 'viewers', 'community'],
     },
     dailyLimits: { email: 40, dm: 20, discord: 10 },
-    followupAfterDays: 6,     // Nachfass-Mail nach X Tagen ohne Antwort (nur E-Mail)
+    followupAfterDays: 3,     // Nachfass-Mail nach X Tagen ohne Antwort (nur E-Mail)
     maxFollowups: 1,
-    noReplyAfterDays: 14,     // danach Status "keine Antwort"
+    noReplyAfterDays: 7,      // danach Status "keine Antwort"
     emailClient: 'gmail',     // gmail|outlook|mailto
     instagramLink: 'web',     // web = Profil öffnen, app = ig.me-Link (Handy)
     abTest: true,             // Varianten A/B abwechselnd verwenden
@@ -95,6 +95,7 @@ export const DEFAULTS = {
   },
 
   discord: {
+    useBot: false,            // Discord-Bot verwenden? Läuft nur, solange das Programm offen ist.
     guildId: '',
     roles: {},                // von /setup gesetzt: creator, founding, tester, staff
     channels: {},             // von /setup gesetzt (siehe docs/ARCHITEKTUR.md)

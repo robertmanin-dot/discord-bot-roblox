@@ -88,6 +88,7 @@ export default function systemRoutes() {
       counts: counts(),
       quota: quotaToday(),
       game: { name: getSettings().game.name, launchAt: getSettings().game.launchAt, timezone: getSettings().game.timezone },
+      features: { bot: Boolean(getSettings().discord.useBot) },
     });
   });
 
