@@ -256,6 +256,50 @@ function interleave(lists) {
   return out;
 }
 
+// "date" first: the newest uploads come mostly from small channels; "relevance" adds established ones.
+const ORDERS = ['date', 'relevance'];
+const CURSOR_RESET_DAYS = 3;
+
+/** All search streams (language × query × order) in round-robin order. */
+export function searchStreams(qmap, langs) {
+  const out = [];
+  for (const order of ORDERS) {
+    const perLang = langs.map((lang) => (qmap[lang] || []).map((q) => ({ lang, q, order, key: `${lang}|${order}|${q.toLowerCase()}` })));
+    out.push(...interleave(perLang));
+  }
+  return out;
+}
+
+function freshCursor(key, now, windowDays) {
+  return {
+    source: 'youtube',
+    stream: key,
+    page_token: null,
+    pages_done: 0,
+    exhausted: 0,
+    published_after: new Date(now.getTime() - windowDays * 86_400_000).toISOString(),
+    new_channels: 0,
+    updated_at: now.toISOString(),
+  };
+}
+
+function loadCursor(key, now, windowDays) {
+  const row = getDb().get("SELECT * FROM discovery_cursor WHERE source = 'youtube' AND stream = :key", { key });
+  if (!row || !row.published_after || daysSince(row.updated_at, now) > CURSOR_RESET_DAYS) return freshCursor(key, now, windowDays);
+  return { ...row };
+}
+
+function saveCursor(c) {
+  getDb().run(
+    `INSERT INTO discovery_cursor (source, stream, page_token, pages_done, exhausted, published_after, new_channels, updated_at)
+     VALUES (:source, :stream, :page_token, :pages_done, :exhausted, :published_after, :new_channels, :updated_at)
+     ON CONFLICT(source, stream) DO UPDATE SET page_token = excluded.page_token, pages_done = excluded.pages_done,
+       exhausted = excluded.exhausted, published_after = excluded.published_after,
+       new_channels = excluded.new_channels, updated_at = excluded.updated_at`,
+    c,
+  );
+}
+
 /**
  * Searches recent Roblox videos per language, then checks channels and saves fitting ones.
  * Returns { found, added, updated, skipped, searches, units }.
@@ -268,53 +312,89 @@ export async function runYoutubeDiscovery({
   const client = youtubeClient({ fetchImpl, settings });
   const langs = (languages?.length ? languages : settings.radar.languages).filter(Boolean);
   const qmap = normalizeQueries(queries, langs, yt.queries);
-  const plan = interleave(langs.map((lang) => (qmap[lang] || []).map((q) => ({ lang, q }))));
+  const streams = searchStreams(qmap, langs);
   const summary = { found: 0, added: 0, updated: 0, skipped: 0, searches: 0, units: 0 };
-  if (!plan.length) throw new HttpError(400, 'Keine Suchbegriffe für die gewählten Sprachen hinterlegt.');
+  if (!streams.length) throw new HttpError(400, 'Keine Suchbegriffe für die gewählten Sprachen hinterlegt.');
   const remaining = Math.max(0, yt.dailySearchLimit - getUsage(youtubeDay(now), 'youtube_search'));
   const budget = Math.min(Number(maxSearches) > 0 ? Number(maxSearches) : yt.maxSearchesPerRun, remaining);
   if (budget <= 0) {
     onLog('Das Tageslimit für YouTube-Suchen ist erreicht – gegen 9 Uhr deutscher Zeit geht es weiter.');
     return summary;
   }
-  onLog(`Start: ${plan.length} Suchbegriffe (${langs.join(', ')}), bis zu ${budget} Suchaufrufe (heute noch ${remaining} frei).`);
-  const publishedAfter = new Date(now.getTime() - yt.publishedWithinDays * 86_400_000).toISOString();
+  // Each run continues where the last one stopped (per language, query and sort order),
+  // so several runs a day keep finding new channels instead of repeating the same searches.
+  const maxPages = Math.min(10, Math.max(1, Number(yt.pagesPerQuery) || 5));
+  const windowDays = Number(yt.publishedWithinDays) || 45;
+  const cursors = new Map(streams.map((st) => [st.key, loadCursor(st.key, now, windowDays)]));
+  const eligible = (st) => {
+    const c = cursors.get(st.key);
+    return !c.exhausted && c.pages_done < maxPages;
+  };
+  if (!streams.some(eligible)) {
+    onLog('Alle Suchbegriffe sind durchsucht – es geht wieder von vorn los. Tipp: Neue Suchbegriffe (Finden → YouTube) bringen mehr neue Kanäle.');
+    for (const st of streams) cursors.set(st.key, freshCursor(st.key, now, windowDays));
+  }
+  const pickNext = () => {
+    let best = null;
+    for (const st of streams) {
+      if (!eligible(st)) continue;
+      if (!best || cursors.get(st.key).pages_done < cursors.get(best.key).pages_done) best = st;
+    }
+    return best;
+  };
+  onLog(`Start: ${streams.length / ORDERS.length} Suchbegriffe × neueste/beliebteste (${langs.join(', ')}), bis zu ${budget} Suchaufrufe (heute noch ${remaining} frei).`);
   const hits = new Map();
-  let stop = false;
 
-  for (const { lang, q } of plan) {
-    if (stop) break;
-    let pageToken;
-    for (let page = 0; page < Math.max(1, yt.pagesPerQuery); page++) {
-      if (signal?.aborted || summary.searches >= budget) {
-        stop = true;
+  while (summary.searches < budget && !signal?.aborted) {
+    const st = pickNext();
+    if (!st) break;
+    const c = cursors.get(st.key);
+    let res;
+    try {
+      res = await client.search({
+        q: st.q,
+        type: 'video',
+        order: st.order,
+        publishedAfter: c.published_after,
+        relevanceLanguage: st.lang,
+        pageToken: c.page_token || undefined,
+      });
+    } catch (err) {
+      if (err instanceof QuotaError) {
+        onLog(err.message);
         break;
       }
-      let res;
-      try {
-        res = await client.search({ q, type: 'video', publishedAfter, relevanceLanguage: lang, order: 'relevance', pageToken });
-      } catch (err) {
-        if (err instanceof QuotaError) {
-          onLog(err.message);
-          stop = true;
-          break;
-        }
-        throw err;
+      if (/page ?token/i.test(err.message)) {
+        // Outdated page token: start this search again from page 1.
+        summary.searches++;
+        const reset = freshCursor(st.key, now, windowDays);
+        cursors.set(st.key, reset);
+        saveCursor(reset);
+        continue;
       }
-      summary.searches++;
-      let fresh = 0;
-      for (const item of res.items || []) {
-        const cid = item.snippet?.channelId;
-        if (!cid) continue;
-        if (!hits.has(cid)) {
-          hits.set(cid, { lang });
-          fresh++;
-        }
-      }
-      onLog(`„${q}“ (${lang}), Seite ${page + 1}: ${res.items?.length || 0} Videos, ${fresh} neue Kanäle`);
-      pageToken = res.nextPageToken;
-      if (!pageToken) break;
+      throw err;
     }
+    summary.searches++;
+    let fresh = 0;
+    for (const item of res.items || []) {
+      const cid = item.snippet?.channelId;
+      if (!cid) continue;
+      if (!hits.has(cid)) {
+        hits.set(cid, { lang: st.lang });
+        fresh++;
+      }
+    }
+    const next = {
+      ...c,
+      page_token: res.nextPageToken || null,
+      pages_done: c.pages_done + 1,
+      exhausted: res.nextPageToken ? 0 : 1,
+      new_channels: (c.new_channels || 0) + fresh,
+      updated_at: now.toISOString(),
+    };
+    cursors.set(st.key, next);
+    saveCursor(next);
+    onLog(`„${st.q}“ (${st.lang}, ${st.order === 'date' ? 'neueste' : 'beliebteste'}), Seite ${next.pages_done}: ${res.items?.length || 0} Videos, ${fresh} neue Kanäle`);
   }
   if (signal?.aborted) {
     onLog('Abgebrochen.');

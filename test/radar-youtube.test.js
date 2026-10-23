@@ -30,11 +30,11 @@ test('discovery end-to-end: filters, saves data, counts quota', async () => {
   const fetchImpl = mockFetch(world.handler);
   const logs = [];
   const summary = await runYoutubeDiscovery({ fetchImpl, onLog: (l) => logs.push(l) });
-  assert.equal(summary.searches, 2);
+  assert.equal(summary.searches, 4, '1 query per language × newest + most relevant');
   assert.equal(summary.found, 3, 'DE1, EN1, COOK are inside the follower range');
   assert.equal(summary.added, 2);
   assert.equal(summary.skipped, 3, 'BIG + HIDDEN out of range, COOK not a Roblox channel');
-  assert.equal(getUsage(youtubeDay(), 'youtube_search'), 2);
+  assert.equal(getUsage(youtubeDay(), 'youtube_search'), 4);
   assert.equal(getUsage(youtubeDay(), 'youtube_units'), summary.units);
   assert.ok(logs.some((l) => /Fertig/.test(l)));
 

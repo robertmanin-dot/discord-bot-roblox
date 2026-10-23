@@ -60,7 +60,7 @@ export const DEFAULTS = {
         ],
       },
       publishedWithinDays: 45,
-      pagesPerQuery: 2,
+      pagesPerQuery: 5,       // Seiten je Suchbegriff und Sortierung (neueste/beliebteste), max. 10
       maxSearchesPerRun: 20,
       dailySearchLimit: 100,  // YouTube: 100 Suchen/Tag (seit 1.6.2026 eigenes Kontingent)
       dailyUnitLimit: 10000,

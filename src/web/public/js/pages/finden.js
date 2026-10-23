@@ -180,7 +180,7 @@ export async function render(root, { query, refreshStatus }) {
           quotaBox,
           h('div', { class: 'row mt' }, h('span', { class: 'label' }, 'Sprachen:'), langChecks.map(({ l, el }) => h('label', { class: 'check' }, el, LANGUAGES[l] || l)), h('span', { style: 'width:200px' }, newLang)),
           h('div', { class: 'grid grid-2 mt' }, queryAreas.map(({ l, el }) => field(`Suchbegriffe ${LANGUAGES[l] || l}`, el, 'Ein Suchbegriff pro Zeile.'))),
-          h('div', { class: 'row mt' }, field('Suchen in diesem Durchlauf (max.)', maxSearches, 'Jeder Suchbegriff × Seite = 1 Suche.'), h('span', { class: 'spacer' }), actionButton('Suchbegriffe speichern', () => saveQueries(), { cls: 'btn' }), startBtn),
+          h('div', { class: 'row mt' }, field('Suchen in diesem Durchlauf (max.)', maxSearches, 'Jeder Lauf macht da weiter, wo der letzte aufgehört hat. 1 Suche = 50 Videos, neueste und beliebteste im Wechsel.'), h('span', { class: 'spacer' }), actionButton('Suchbegriffe speichern', () => saveQueries(), { cls: 'btn' }), startBtn),
         ),
         runArea,
         history,

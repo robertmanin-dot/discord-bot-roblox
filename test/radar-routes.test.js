@@ -185,7 +185,7 @@ test('discovery endpoints with mocked YouTube', async () => {
   const runs = await api('GET', '/api/discovery/runs');
   assert.equal(runs.data.items[0].id, start.data.runId);
   const quota = await api('GET', '/api/discovery/quota');
-  assert.equal(quota.data.youtube.searchesUsed, 2);
+  assert.equal(quota.data.youtube.searchesUsed, 4);
   assert.equal(quota.data.youtube.keySet, true);
   assert.equal(quota.data.twitch.keySet, false);
   assert.equal((await api('POST', '/api/discovery/twitch', {})).status, 400);

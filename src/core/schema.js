@@ -347,4 +347,17 @@ CREATE TABLE bugs (
   created_at TEXT NOT NULL DEFAULT ${NOW}
 );
 `,
+  /* 2: search progress per query, so repeated runs continue instead of repeating */ `
+CREATE TABLE discovery_cursor (
+  source TEXT NOT NULL,                   -- youtube
+  stream TEXT NOT NULL,                   -- language|order|query
+  page_token TEXT,                        -- next result page (NULL = start)
+  pages_done INTEGER NOT NULL DEFAULT 0,
+  exhausted INTEGER NOT NULL DEFAULT 0,   -- 1 = no more pages
+  published_after TEXT,                   -- search window used with this token
+  new_channels INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL DEFAULT ${NOW},
+  PRIMARY KEY (source, stream)
+);
+`,
 ];
