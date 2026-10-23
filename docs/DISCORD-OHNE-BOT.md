@@ -300,4 +300,7 @@ No money, no Robux, no giveaways – Roblox rules don't allow that. Taking part 
 6. Private Links (Testserver) bleiben privat. / Private links (test servers) stay private.
 7. Kein Handel mit Items, Robux oder Accounts. / No trading of items, Robux or accounts.
 8. Creator: Inhalte mit Gegenleistung als „Werbung“ kennzeichnen. / Creators: label content as an ad if you got anything for it.
+9. Turniere und Giveaways nur offiziell vom Team – Preise nur Ingame-Items, keine Robux oder Geld. / Tournaments and giveaways only official ones by the team – prizes only in-game items, no Robux or money.
 ```
+
+> Warum Regel 9? Veranstaltet ein Spieler auf eigene Faust ein Gewinnspiel mit Robux oder Geld, verstößt **er** gegen die Roblox-Regeln, nicht du. Damit es nicht nach deinem Gewinnspiel aussieht, sollte es aber nicht in deinem offiziellen Discord laufen – mit dieser Regel kannst du solche Posts einfach löschen.
